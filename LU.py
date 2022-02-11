@@ -1,4 +1,5 @@
 # The purpose of this file is to calculate the exact solutions of a matrix using LU decomposition.
+# Special thanks to Dr. John Starner
 
 Matrix = [[2, -1, 0],
           [-1, 2, -1],
