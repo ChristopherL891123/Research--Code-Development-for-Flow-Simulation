@@ -21,7 +21,7 @@ def DECOMP(A , SHOW_LU):
     global L #will be needed in other parts of the program
     L =[ [0,0,0] for i in range(n)]
 
-    for i in range(0, n-1):
+    for i in range(0, n):
         L[i][i] = 1
 
     #set up the U matrix
@@ -69,6 +69,6 @@ def FwdElim(y , SHOW_y):
         for j in range(0, i):
             sum = sum + L[i][j] * y[j]
     if SHOW_y == True:
-        print("y =","\n",y)
+        print("y =\n", y)
 
 FwdElim(y,True)
