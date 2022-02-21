@@ -30,13 +30,14 @@ def DECOMP(A , SHOW_LU):
 
     # calculate the L and the U matrices
 
-    for i in range(0,n-2):
-        for j in range(i+1,n-1):
-            factor = U[j][i] / U[i][i]
-            L[j][i] = factor
-
-            for k in range(0,n-1):
-                U[j][k] = U[j][k] - (U[i][k]*factor)
+    for j in range(0,n-1):
+        for i in range(j+1,n):
+            #make U[i][k] = 0
+            factor = U[j][i]/U[j][j]
+            L[i][j] = factor
+            #adjust row i
+            for k in range(0,n):
+                U[i][k] = U[i][k]-(factor*U[j][k])
 
     #print L and U
     if SHOW_LU == True:
