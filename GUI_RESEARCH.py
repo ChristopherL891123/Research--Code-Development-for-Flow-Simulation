@@ -1,3 +1,5 @@
+#https://edube.org/learn/pcpp1-4-gui-programming/settling-widgets-in-the-window-s-interior-3
+
 import tkinter
 from tkinter import messagebox #used to display message boxes to the user
 def EXITmyGUI():#this is used to tell the program what to do when it is clicked
