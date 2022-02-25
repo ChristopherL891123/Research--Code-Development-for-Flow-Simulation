@@ -10,36 +10,35 @@ B = [0.95,
      0.95]
 
 
-def DECOMP(A , SHOW_LU):
-
-    #Construct L and U matrices --> beware of zero division error , if error use pivoting
+def DECOMP(A, SHOW_LU):
+    # Construct L and U matrices --> beware of zero division error , if error use pivoting
 
     global n
     n = len(A)
 
-    #set up the L matrix
-    global L #will be needed in other parts of the program
-    L =[ [0,0,0] for i in range(n)]
+    # set up the L matrix
+    global L  # will be needed in other parts of the program
+    L = [[0, 0, 0] for i in range(n)]
 
     for i in range(0, n):
         L[i][i] = 1
 
-    #set up the U matrix
+    # set up the U matrix
     global U
     U = Matrix.copy()
 
     # calculate the L and the U matrices
 
-    for j in range(0,n-1):
-        for i in range(j+1,n):
-            #make U[i][k] = 0
-            factor = U[j][i]/U[j][j]
+    for j in range(0, n - 1):
+        for i in range(j + 1, n):
+            # make U[i][k] = 0
+            factor = U[j][i] / U[j][j]
             L[i][j] = factor
-            #adjust row i
-            for k in range(0,n):
-                U[i][k] = U[i][k]-(factor*U[j][k])
+            # adjust row i
+            for k in range(0, n):
+                U[i][k] = U[i][k] - (factor * U[j][k])
 
-    #print L and U
+    # print L and U
     if SHOW_LU == True:
         print("U = ")
         for i in range(len(U)):
@@ -56,15 +55,16 @@ def DECOMP(A , SHOW_LU):
             print(L[i], end="\n")
         print()
 
-DECOMP(Matrix,True)
 
-#set up y
+DECOMP(Matrix, True)
+
+# set up y
 y = [0 for i in range(n)]
 y[0] = B[0]
 
 
-#forward elimination
-def FwdElim(y , SHOW_y):
+# forward elimination
+def FwdElim(y, SHOW_y):
     for i in range(0, n - 1):
         sum = 0
         for j in range(0, i):
@@ -72,4 +72,7 @@ def FwdElim(y , SHOW_y):
     if SHOW_y == True:
         print("y =\n", y)
 
-FwdElim(y,True)
+
+FwdElim(y, True)
+
+
