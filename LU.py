@@ -69,7 +69,7 @@ y[0] = B[0]
 
 
 # forward elimination
-def FwdElim(y, SHOW_y):
+def FORWARD_E(y, SHOW_y):
     for i in range(n):
         sum = 0
         for j in range(0, i):
@@ -80,4 +80,4 @@ def FwdElim(y, SHOW_y):
         print("y =\n", y)
 
 
-FwdElim(y,True)
+FORWARD_E(y,True)
