@@ -18,10 +18,12 @@ def DECOMP(A, SHOW_LU):
 
     # set up the L matrix
     global L  # will be needed in other parts of the program
-    L = [[0, 0, 0] for i in range(n)]
 
-    for i in range(0, n):
-        L[i][i] = 1
+    L = []
+    for i in range(n):
+        L.append([]) # create ith  row in L
+        for j in range(n): # will add 0s to the ith row that was just created
+            L[i].append(0)
 
     # set up the U matrix
     global U
@@ -29,13 +31,13 @@ def DECOMP(A, SHOW_LU):
 
     # calculate the L and the U matrices
 
-    for j in range(0, n - 1):
-        for i in range(j + 1, n):
+    for j in range(0, n - 1): # j is meant to represent the previous row
+        for i in range(j + 1, n): # i is meant to represent the current row
             # make U[i][k] = 0
             factor = U[j][i] / U[j][j]
             L[i][j] = factor
             # adjust row i
-            for k in range(0, n):
+            for k in range(0, n): # k is meant to represent the current column
                 U[i][k] = U[i][k] - (factor * U[j][k])
 
     # print L and U

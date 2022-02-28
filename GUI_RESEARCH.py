@@ -3,7 +3,7 @@
 import tkinter
 from tkinter import messagebox #used to display message boxes to the user # https://realpython.com/lessons/import-statement/
 def showMessage1():
-    messagebox.showinfo("  ","    ")
+    messagebox.showinfo("  ","    ") #note: \n can  be used
 
 def EXITmyGUI():#this is used to tell the program what to do when it is clicked
     QuitMessage = messagebox.askyesno("Quit?","Are you sure you want to quit the application?") #returns Boolean value
