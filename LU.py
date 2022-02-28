@@ -19,12 +19,15 @@ def DECOMP(A, SHOW_LU):
     # set up the L matrix
     global L  # will be needed in other parts of the program
 
+    # set up the L matrix
     L = []
     for i in range(n):
         L.append([]) # create ith  row in L
         for j in range(n): # will add 0s to the ith row that was just created
             L[i].append(0)
 
+    for i in range(n):
+        L[i][i] = 1
     # set up the U matrix
     global U
     U = Matrix.copy()
@@ -67,14 +70,14 @@ y[0] = B[0]
 
 # forward elimination
 def FwdElim(y, SHOW_y):
-    for i in range(0, n - 1):
+    for i in range(n):
         sum = 0
         for j in range(0, i):
-            sum = sum + L[i][j] * y[j]
+            sum = sum + L[i][j] * B[j]
+            y[i] = sum
+            print(sum)
     if SHOW_y == True:
         print("y =\n", y)
 
 
-FwdElim(y, True)
-
-
+FwdElim(y,True)
