@@ -70,7 +70,7 @@ y[0] = B[0]
 
 # forward elimination
 def FORWARD_E(y, SHOW_y):
-    for i in range(n):
+    for i in range(0,n):
         sum_row = 0 # meant to hold the sum of all the row i
         for j in range(0, i): #from first element, ends with diagonal element.
             sum_row += L[i][j] * y[j]
