@@ -5,10 +5,9 @@ Matrix = [[2, -1, 0],
           [-1, 2, -1],
           [0, -1, 2]]
 
-B = [0.95,
-     0.95,
-     0.95]
-
+B = [0.95238095,
+     0.95238095,
+     0.95238095]
 
 def DECOMP(A, SHOW_LU):
     # Construct L and U matrices --> beware of zero division error , if error use pivoting
@@ -58,25 +57,40 @@ def DECOMP(A, SHOW_LU):
             for j in range(len(L[i])):
                 L[i][j] = float(L[i][j])
             print(L[i], end="\n")
+
         print()
 
-
-DECOMP(Matrix, True)
-
-# set up y
-y = [0 for i in range(n)]
-y[0] = B[0]
-
-
 # forward elimination
-def FORWARD_E(y, SHOW_y):
+def FORWARD_E(SHOW_y):
+    # set up y
+    global y
+    y = [0 for i in range(n)]
     for i in range(0,n):
         sum_row = 0 # meant to hold the sum of all the row i
         for j in range(0, i): #from first element, ends with diagonal element.
             sum_row += L[i][j] * y[j]
-        y[i] = (-1 * sum_row) + 0.95
+        y[i] = (-1 * sum_row) + B[i]
     if SHOW_y == True:
         print("y =\n", y)
 
+# backward elimination
+def BACKWARD_E(SHOW_x):
+    # set up x
+    global x
+    x = [0 for i in range(n)]
 
-FORWARD_E(y,True)
+    for i in range(-1,-n-1,-1):
+        sum_row = 0  # meant to hold the sum of all the row i
+
+        for j in range(i,0):  # from first element, ends with diagonal element.
+            sum_row += U[i][j] * x[j]
+        x[i] = ((-1 * sum_row) + y[i])/U[i][i]
+    if SHOW_x == True:
+        print("x =\n", x)
+
+
+DECOMP(Matrix, True)
+FORWARD_E(True)
+BACKWARD_E(True)
+
+
