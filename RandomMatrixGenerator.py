@@ -1,5 +1,7 @@
 import random
 
+"""RAND(size) Makes a random square matrix of a specified size"""
+
 def RAND(size):
     R = []
     for i in range(size):
