@@ -1,13 +1,13 @@
 # The purpose of this file is to calculate the exact solutions of a matrix using LU decomposition.
 # Special thanks to Dr. John Starner
 
-Matrix = [[2, -1, 0],
-          [-1, 2, -1],
-          [0, -1, 2]]
+Matrix = [[1, 1, -1],
+         [1, -2, 3],
+         [2, 3, 1]]
 
-B = [0.95238095,
-     0.95238095,
-     0.95238095]
+B = [4,
+     -6,
+     7]
 
 def DECOMP(A, SHOW_LU):
     # Construct L and U matrices --> beware of zero division error , if error use pivoting
@@ -36,7 +36,7 @@ def DECOMP(A, SHOW_LU):
     for j in range(0, n - 1): # j is meant to represent the previous row
         for i in range(j + 1, n): # i is meant to represent the current row
             # make U[i][k] = 0
-            factor = U[j][i] / U[j][j]
+            factor = U[i][j] / U[j][j]
             L[i][j] = factor
             # adjust row i
             for k in range(0, n): # k is meant to represent the current column
