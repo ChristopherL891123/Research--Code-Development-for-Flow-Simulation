@@ -1,3 +1,5 @@
+import random
+
 def RAND(size):
     R = []
     for i in range(size):
@@ -6,6 +8,7 @@ def RAND(size):
             R[i].append(random.randrange(-20,20))
     return R
 
+#test
 a = RAND(3)
 for i in range(len(a)):
     print(a[i])

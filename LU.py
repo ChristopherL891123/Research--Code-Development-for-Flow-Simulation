@@ -1,6 +1,5 @@
 # The purpose of this file is to calculate the exact solutions of a matrix using LU decomposition.
 # Special thanks to Dr. John Starner
-import random
 
 Matrix = [[1, 1, -1],
           [1, -2, 3],
