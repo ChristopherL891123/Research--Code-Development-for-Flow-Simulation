@@ -1,13 +1,14 @@
 # The purpose of this file is to calculate the exact solutions of a matrix using LU decomposition.
 # Special thanks to Dr. John Starner
+import random
 
-Matrix = [[2, -1, 0],
-          [-1, 2, -1],
-          [0, -1, 2]]
-
-B = [0.95238095,
-     0.95238095,
-     0.95238095]
+Matrix = [[1, 1, -1],
+          [1, -2, 3],
+          [2, 3, 1]]
+#
+B = [4,
+     -6,
+     7]
 
 def DECOMP(A, SHOW_LU):
     # Construct L and U matrices --> beware of zero division error , if error use pivoting
@@ -48,17 +49,16 @@ def DECOMP(A, SHOW_LU):
         for i in range(len(U)):
             for j in range(len(L[i])):
                 U[i][j] = float(U[i][j])
-            print(U[i], end="\n")
+            print(U[i])
 
-        print()
 
         print("L = ")
         for i in range(len(L)):
             for j in range(len(L[i])):
                 L[i][j] = float(L[i][j])
-            print(L[i], end="\n")
+            print(L[i])
 
-        print()
+
 
 # forward elimination
 def FORWARD_E(SHOW_y):
@@ -87,6 +87,7 @@ def BACKWARD_E(SHOW_x):
         x[i] = ((-1 * sum_row) + y[i])/U[i][i]
     if SHOW_x == True:
         print("x =\n", x)
+
 
 
 DECOMP(Matrix, True)
