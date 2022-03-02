@@ -39,12 +39,12 @@ Y_j_LIST.insert(0, 'blank')  # for adding this to the table( 'blank' will not be
 # create matrix
 Matrix = np.array([[2, -1, 0], [-1, 2, -1], [0, -1, 2]])
 
-print("Matrix: \n", Matrix)
+print("A Matrix: \n", Matrix)
 
 # create dependent variable matrix
 Dependent_Matrix = np.array([[F_j], [F_j], [F_j]])
 
-print("\nDependent Matrix: \n", Dependent_Matrix)
+print("\n B Matrix: \n", Dependent_Matrix)
 
 # solve the matrix using the solve function in Numpy library, this function returns another matrix(ndarray)
 # where the solutions are stored. Does not show zeros.
@@ -101,7 +101,6 @@ for nested_lists3 in Table:
 Table[0][0] = "Y_j"
 Table[0][1] = "Solution"
 Table[0][2] = "V Exact"
-
 
 
 
