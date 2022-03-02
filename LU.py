@@ -90,6 +90,6 @@ def BACKWARD_E(SHOW_x):
 
 DECOMP(Matrix, True)
 FORWARD_E(True)
-BACKWARD_E(True)
+BACKWARD_E(True)   #correct results are 1.42857143,1.9047619 ,1.42857143
 
 
