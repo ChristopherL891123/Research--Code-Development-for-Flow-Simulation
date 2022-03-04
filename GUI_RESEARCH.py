@@ -11,7 +11,7 @@ def EXITmyGUI():#this is used to tell the program what to do when it is clicked
         myGUI.destroy()# closes the window
 
 myGUI = tkinter.Tk() #starts the GUI, invisible until the event controller starts
-myGUI.title("Numerical Simulation of Arterial Blood Flow") # must be called before the main controller or it won't show the title
+myGUI.title("Code Development for Flow Simulation") # must be called before the main controller or it won't show the title
 
 
 label1 = tkinter.Label(myGUI,text= "The purpose of this research is to model a numerical flow simulation of the one-dimensional Poiseuille model using Python code. ")
