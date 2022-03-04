@@ -23,7 +23,7 @@ def GENERATE(n):
 
 def MatPrint(matrix):
     n = len(matrix)
-    print("__Matrix__", " = ")
+    print("Matrix", " = ")
     for i in range(n):
         print(matrix[i])
 
