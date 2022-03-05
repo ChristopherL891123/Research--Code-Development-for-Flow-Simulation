@@ -14,7 +14,7 @@ def GENERATE(n):
 
     for j in range(0,n):
         Matrix[j][j] = 2
-        for i in range(j+1,n): #maybe from 1,2?
+        for i in range(j+1,n):
             Matrix[j][i] = -1
             Matrix[i][j] = -1
             break
@@ -22,7 +22,6 @@ def GENERATE(n):
 
 def MatPrint(matrix):
     n = len(matrix)
-    print("Matrix", " = ")
     for i in range(n):
         print(matrix[i])
 
