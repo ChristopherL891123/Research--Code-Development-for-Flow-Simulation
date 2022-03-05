@@ -8,6 +8,7 @@ def main():
     A = []
     A = MatrixGeneration.GENERATE(l) #Generates a matrix called Matrix
     MatrixGeneration.MatPrint(A)
+    print()
     LU.SOLVE(A,True, True, True)
 
 main()
