@@ -9,4 +9,4 @@ def main():
     A = MatrixGeneration.GENERATE(l) #Generates a matrix called Matrix
     LU.SOLVE(A,True, True, True)
 
-
+main()

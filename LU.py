@@ -99,13 +99,12 @@ def SOLVE(A,SHOW_LU,SHOW_Y,SHOW_X):
     dY = int(input("Delta Y = "))
     Vm = int(input("Max Velocity = "))
     print("\n***GENERATING***\n")
-    MatrixGeneration.B_VExact_Yj_GENERATE(n,H,L,dP,Nu,dY,Vm )
+    B,VE_points,y_points = MatrixGeneration.B_VExact_Yj_GENERATE(n,H,L,dP,Nu)
 
     DECOMP(A,n,SHOW_LU)
     y = FORWARD_SUB(n,SHOW_Y)
     x = BACKWARD_SUB(y,n,SHOW_X)
 
-    y_points = [-1.5,-1.0,-0.5,0,0.5,1.0,1.5]
     x.insert(0,0)
     x.append(0)
 

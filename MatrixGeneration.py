@@ -47,15 +47,12 @@ def dCheck(A , num_to_check):
     else:
         print("not all diagonal elements are ",num_to_check)
 
-def B_VExact_Yj_GENERATE(n,H,L,dP,V,dY,Vm):
-    H = 1
-    L = 5
-    Delta_P = 8.0
-    Viscosity = 0.42
+def B_VExact_Yj_GENERATE(n,H,L,Delta_P,Viscosity):
     Delta_Y = (2 * H) / 4
     V_max = (Delta_P * H ** 2) / (2 * Viscosity * L)
 
-    F_j = (Delta_Y * ((Delta_P * H) / (2 * 0.42 * 5))) * (0.5 ** 2)
+    # F_j = (Delta_Y * ((Delta_P * H) / (2 * 0.42 * 5))) * (0.5 ** 2)
+    F_j = ((Delta_Y)**2 * (2*V_max))/(H**2)
 
     B = []
 
