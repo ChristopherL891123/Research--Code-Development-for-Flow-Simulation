@@ -5,7 +5,6 @@ import MatrixGeneration
 
 def DECOMP(A,n, SHOW_LU):
     # Construct L and U matrices
-    print("********* N IS: ", n)
     # set up the L matrix
     global L  # will be needed in other parts of the program
 
