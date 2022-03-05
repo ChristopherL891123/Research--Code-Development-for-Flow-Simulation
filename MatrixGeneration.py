@@ -49,12 +49,13 @@ def dCheck(A , num_to_check):
 
 def B_VExact_Yj_GENERATE(n,H,L,Delta_P,Viscosity):
     Delta_Y = (2 * H) / 4
-    V_max = (Delta_P * H ** 2) / (2 * Viscosity * L)
+    V_max = 1.9047619047619047 #(Delta_P * H ** 2) / (2 * Viscosity * L)
 
-    # F_j = (Delta_Y * ((Delta_P * H) / (2 * 0.42 * 5))) * (0.5 ** 2)
     F_j = ((Delta_Y)**2 * (2*V_max))/(H**2)
 
     B = []
+    for i in range(n):
+        B.append(0)
 
     for i in range(n):
         B[i] = F_j

@@ -20,7 +20,7 @@ L = 5
 Delta_P = 8.0
 Viscosity = 0.42
 Delta_Y = (2 * H) / 4
-V_max = (Delta_P * H ** 2) / (2 * Viscosity * L)
+V_max = (8 * 1 ** 2) / (2 * 0.42 * 5)
 
 F_j = (2 * ((8 * 1) / (2 * 0.42 * 5)))
 F_j *= 0.5 ** 2

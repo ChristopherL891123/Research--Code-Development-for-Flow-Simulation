@@ -99,12 +99,21 @@ def SOLVE(A,SHOW_LU,SHOW_Y,SHOW_X):
     print("\n***GENERATING***\n")
     B,VE_points,y_points = MatrixGeneration.B_VExact_Yj_GENERATE(n,H,L,deltaP,Nu)
 
+    y_points.insert(0,y_points[0]-0.5) # add one more Yj point to the list, for graphing purposes
+    y_points.append(y_points[-1]+0.5)
+
+
     DECOMP(A,n,SHOW_LU)
     y = FORWARD_SUB(n,SHOW_Y)
     x = BACKWARD_SUB(y,n,SHOW_X)
 
     x.insert(0,0)
     x.append(0)
+    print("x is")
+    print(x)
+    print("y is")
+    print(y_points)
+
 
     plt.plot(x,y_points)
     plt.show()
