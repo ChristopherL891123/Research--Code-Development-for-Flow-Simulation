@@ -36,13 +36,8 @@ def DECOMP(A,n, SHOW_LU):
     if SHOW_LU == True:
         print("U = ")
         MatrixGeneration.MatPrint(U)
-
-
         print("L = ")
-        for i in range(len(L)):
-            for j in range(len(L[i])):
-                L[i][j] = float(L[i][j])
-            print(L[i])
+        MatrixGeneration.MatPrint(L)
 
 
 
