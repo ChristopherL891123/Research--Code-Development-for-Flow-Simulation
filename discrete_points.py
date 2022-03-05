@@ -110,6 +110,10 @@ Table[0][2] = "V Exact"
 print("Table: \n", tb(Table, tablefmt='fancy_grid'),sep='')
 #NOTE: use showindex=True to count how many rows there are in the table
 
+del Y_j_LIST[0]
+import matplotlib.pyplot as pt
 
+pt.plot(V_exact_LIST,Y_j_LIST)
+pt.show()
 
 

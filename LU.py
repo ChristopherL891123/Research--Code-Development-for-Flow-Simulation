@@ -1,7 +1,7 @@
 # The purpose of this file is to calculate the exact solutions of a matrix using LU decomposition.
 # Special thanks to Dr. John Starner
-
-
+import matplotlib.pyplot as plt
+import MatrixGeneration
 
 def DECOMP(A,n, SHOW_LU):
     # Construct L and U matrices
@@ -86,17 +86,31 @@ def BACKWARD_SUB(y,n,SHOW_x):
     return x
 
 def SOLVE(A,SHOW_LU,SHOW_Y,SHOW_X):
+    import matplotlib.pyplot as pt
     global B
     global n
 
     n = len(A)
 
-    B = [0.95238095,   # B MUST BE OF THE SAME LENGTH OF A!
-         0.95238095,
-         0.95238095,
-         0.95238095,
-         0.95238095]
+    H = int(input("H = "))
+    L = int(input("L = "))
+    dP = int(input("Delta P = "))
+    Nu = int(input("Viscosity = "))
+    dY = int(input("Delta Y = "))
+    Vm = int(input("Max Velocity = "))
+    print("\n***GENERATING***\n")
+    MatrixGeneration.B_VExact_Yj_GENERATE(n,H,L,dP,Nu,dY,Vm )
 
     DECOMP(A,n,SHOW_LU)
     y = FORWARD_SUB(n,SHOW_Y)
     x = BACKWARD_SUB(y,n,SHOW_X)
+
+    y_points = [-1.5,-1.0,-0.5,0,0.5,1.0,1.5]
+    x.insert(0,0)
+    x.append(0)
+
+    plt.plot(x,y_points)
+    plt.show()
+
+
+
