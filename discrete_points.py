@@ -37,7 +37,9 @@ for i in range(5):
 Y_j_LIST.insert(0, 'blank')  # for adding this to the table( 'blank' will not be displayed on the table )
 
 # create matrix
-Matrix = np.array([[2, -1, 0], [-1, 2, -1], [0, -1, 2]])
+Matrix = np.array([[2, -1, 0],
+                   [-1, 2, -1],
+                   [0, -1, 2]])
 
 print("A Matrix: \n", Matrix)
 

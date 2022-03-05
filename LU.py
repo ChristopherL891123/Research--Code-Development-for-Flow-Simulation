@@ -2,13 +2,10 @@
 # Special thanks to Dr. John Starner
 
 
-def DECOMP(A, SHOW_LU):
+
+def DECOMP(A,n, SHOW_LU):
     # Construct L and U matrices
-
-    global n
-    n = len(A)
-
-
+    print("********* N IS: ", n)
     # set up the L matrix
     global L  # will be needed in other parts of the program
 
@@ -54,21 +51,14 @@ def DECOMP(A, SHOW_LU):
 
 
 # forward elimination
-def FORWARD_SUB(A,SHOW_y):
+def FORWARD_SUB(n,SHOW_y):
+
+    global B
+
     # set up y
-    global y
-    global n
-
-    n = len(A)
-    #set up B matrix
-
-    #
-    B = [0.95238095,
-          0.95238095,
-          0.95238095]
-    #
-
-    y = [0 for i in range(n)]
+    y = []
+    for i in range(n):
+        y.append(0)
     for i in range(0,n):
         sum_row = 0 # meant to hold the sum of all the row i
         for j in range(0, i): #from first element, ends with diagonal element.
@@ -76,11 +66,13 @@ def FORWARD_SUB(A,SHOW_y):
         y[i] = (-1 * sum_row) + B[i]
     if SHOW_y == True:
         print("y =\n", y)
+    return y
 
 # backward elimination
-def BACKWARD_SUB(A,SHOW_x):
+def BACKWARD_SUB(y,n,SHOW_x):
     # set up x
     global x
+
     x = [0 for i in range(n)]
 
     for i in range(-1,-n-1,-1):
@@ -91,11 +83,20 @@ def BACKWARD_SUB(A,SHOW_x):
         x[i] = ((-1 * sum_row) + y[i])/U[i][i]
     if SHOW_x == True:
         print("x =\n", x)
+    return x
 
 def SOLVE(A,SHOW_LU,SHOW_Y,SHOW_X):
+    global B
     global n
+
     n = len(A)
 
-    DECOMP(A,SHOW_LU)
-    FORWARD_SUB(A, SHOW_Y)
-    BACKWARD_SUB(A, SHOW_X)
+    B = [0.95238095,   # B MUST BE OF THE SAME LENGTH OF A!
+         0.95238095,
+         0.95238095,
+         0.95238095,
+         0.95238095]
+
+    DECOMP(A,n,SHOW_LU)
+    y = FORWARD_SUB(n,SHOW_Y)
+    x = BACKWARD_SUB(y,n,SHOW_X)
