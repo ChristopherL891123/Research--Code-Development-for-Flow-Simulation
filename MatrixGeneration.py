@@ -4,6 +4,7 @@ def GENERATE(n):
     #set up the Matrix
     """Takes in 2 parameters: 1. the blank matrix to fill with generated values
     2. the number of rows and items(generates an NxN matrix) """
+    global Matrix
     Matrix = []
     #set up the matrix
     for i in range(n):

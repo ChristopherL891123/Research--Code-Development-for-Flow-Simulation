@@ -8,6 +8,7 @@ def DECOMP(A, SHOW_LU):
     global n
     n = len(A)
 
+
     # set up the L matrix
     global L  # will be needed in other parts of the program
 
@@ -22,7 +23,7 @@ def DECOMP(A, SHOW_LU):
         L[i][i] = 1
     # set up the U matrix
     global U
-    U = Matrix.copy()
+    U = A.copy()
 
     # calculate the L and the U matrices
 
@@ -53,9 +54,20 @@ def DECOMP(A, SHOW_LU):
 
 
 # forward elimination
-def FORWARD_SUB(SHOW_y):
+def FORWARD_SUB(A,SHOW_y):
     # set up y
     global y
+    global n
+
+    n = len(A)
+    #set up B matrix
+
+    #
+    B = [0.95238095,
+          0.95238095,
+          0.95238095]
+    #
+
     y = [0 for i in range(n)]
     for i in range(0,n):
         sum_row = 0 # meant to hold the sum of all the row i
@@ -66,7 +78,7 @@ def FORWARD_SUB(SHOW_y):
         print("y =\n", y)
 
 # backward elimination
-def BACKWARD_SUB(SHOW_x):
+def BACKWARD_SUB(A,SHOW_x):
     # set up x
     global x
     x = [0 for i in range(n)]
@@ -79,3 +91,11 @@ def BACKWARD_SUB(SHOW_x):
         x[i] = ((-1 * sum_row) + y[i])/U[i][i]
     if SHOW_x == True:
         print("x =\n", x)
+
+def SOLVE(A,SHOW_LU,SHOW_Y,SHOW_X):
+    global n
+    n = len(A)
+
+    DECOMP(A,SHOW_LU)
+    FORWARD_SUB(A, SHOW_Y)
+    BACKWARD_SUB(A, SHOW_X)
