@@ -92,14 +92,12 @@ def SOLVE(A,SHOW_LU,SHOW_Y,SHOW_X):
 
     n = len(A)
 
-    H = int(input("H = "))
-    L = int(input("L = "))
-    dP = int(input("Delta P = "))
-    Nu = int(input("Viscosity = "))
-    dY = int(input("Delta Y = "))
-    Vm = int(input("Max Velocity = "))
+    H = int(float(input("H = ")))
+    L = int(float(input("L = ")))
+    deltaP = int(float(input("Delta P = ")))
+    Nu = int(float(input("Viscosity = ")))
     print("\n***GENERATING***\n")
-    B,VE_points,y_points = MatrixGeneration.B_VExact_Yj_GENERATE(n,H,L,dP,Nu)
+    B,VE_points,y_points = MatrixGeneration.B_VExact_Yj_GENERATE(n,H,L,deltaP,Nu)
 
     DECOMP(A,n,SHOW_LU)
     y = FORWARD_SUB(n,SHOW_Y)
