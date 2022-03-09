@@ -1,15 +1,9 @@
 # The purpose of this file is to calculate the exact solutions of a matrix using LU decomposition.
-# Special thanks to Dr. John Starner for helping me develop DECOMP
+# Special thanks to Dr. John Starner
 import matplotlib.pyplot as plt
 import MatrixGeneration
 
-def DECOMP(SHOW_LU=True):
-    # Construct L and U matrices
-    # set up the L matrix
-    global A
-    global U
-    global n
-    global L  # will be needed in other parts of the program
+def DECOMP(A,n, SHOW_LU):
 
     # set up the L matrix
     L = []
@@ -21,10 +15,11 @@ def DECOMP(SHOW_LU=True):
     for i in range(n):
         L[i][i] = 1
     # set up the U matrix
+    global U
     U = A.copy()
 
     # calculate the L and the U matrices
-    # n = 3         0->1
+
     for j in range(0, n - 1): # j is meant to represent the previous row
         for i in range(j + 1, n): # i is meant to represent the current row
             # make U[i][k] = 0
@@ -37,17 +32,16 @@ def DECOMP(SHOW_LU=True):
     # print L and U
     if SHOW_LU == True:
         print("U = ")
-        MatrixGeneration.MatPrint(U)
+        MatrixGeneration.MatPrint(U,n)
         print("L = ")
-        MatrixGeneration.MatPrint(L)
+        MatrixGeneration.MatPrint(L,n)
+
+    return U,L
 
 
 
 # forward elimination
-def FORWARD_SUB(SHOW_y=True):
-    global y
-    global n
-    global B
+def FORWARD_SUB(n,L,B,SHOW_y):
 
     # set up y
     y = []
@@ -60,15 +54,11 @@ def FORWARD_SUB(SHOW_y=True):
         y[i] = (-1 * sum_row) + B[i]
     if SHOW_y == True:
         print("y =\n", y)
-
+    return y
 
 # backward elimination
-def BACKWARD_SUB(SHOW_x=True):
+def BACKWARD_SUB(y,n,U,SHOW_x):
     # set up x
-    global x
-    global y
-    global n
-
     x = [0 for i in range(n)]
 
     for i in range(-1,-n-1,-1):
@@ -81,28 +71,29 @@ def BACKWARD_SUB(SHOW_x=True):
         print("x =\n", x)
     return x
 
-def SOLVE(SHOW_LU=True,SHOW_Y=True,SHOW_X=True): #make code to ask the user for these values
+def SOLVE(A,n,SHOW_LU,SHOW_Y,SHOW_X):
+    import matplotlib.pyplot as pt
 
     H = float(input("H = "))
     L = float(input("L = "))
     deltaP = float(input("Delta P = "))
     Nu = float(input("Viscosity = "))
     print("\n***GENERATING***\n")
-    B,VE_points,y_points = MatrixGeneration.B_VExact_Yj_GENERATE(H,L,deltaP,Nu)
+    B,VE_points,y_points = MatrixGeneration.B_VExact_Yj_GENERATE(n,H,L,deltaP,Nu)
 
     y_points.insert(0,y_points[0]-0.5) # add one more Yj point to the list, for graphing purposes
     y_points.append(y_points[-1]+0.5)
 
 
-    DECOMP(SHOW_LU)
-    FORWARD_SUB(SHOW_Y)
-    BACKWARD_SUB(SHOW_X)
+    U,L = DECOMP(A,n,SHOW_LU)
+    y = FORWARD_SUB(n,L,B,SHOW_Y)
+    x = BACKWARD_SUB(y,n,U,SHOW_X)
 
     x.insert(0,0)
     x.append(0)
     print("x is")
     print(x)
-    print("y points are ")
+    print("y is")
     print(y_points)
 
 
