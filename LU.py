@@ -69,6 +69,7 @@ def BACKWARD_SUB(y,n,U,SHOW_x):
         x[i] = ((-1 * sum_row) + y[i])/U[i][i]
     if SHOW_x == True:
         print("x =\n", x)
+
     return x
 
 def SOLVE(A,n,SHOW_LU,SHOW_Y,SHOW_X):
