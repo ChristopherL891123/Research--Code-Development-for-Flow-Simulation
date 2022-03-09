@@ -64,7 +64,7 @@ def BACKWARD_SUB(y,n,U,SHOW_x):
     for i in range(-1,-n-1,-1):
         sum_row = 0  # meant to hold the sum of all the row i
 
-        for j in range(i,0):  # from first element, ends with diagonal element.
+        for j in range(i,0):
             sum_row += U[i][j] * x[j]
         x[i] = ((-1 * sum_row) + y[i])/U[i][i]
     if SHOW_x == True:
