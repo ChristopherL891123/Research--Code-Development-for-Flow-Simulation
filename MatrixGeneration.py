@@ -4,24 +4,23 @@ def GENERATE(n):
     #set up the Matrix
     """Takes in 2 parameters: 1. the blank matrix to fill with generated values
     2. the number of rows and items(generates an NxN matrix) """
-    global Matrix
-    Matrix = []
+    global A
+    A = []
     #set up the matrix
     for i in range(n):
-        Matrix.append([])
+        A.append([])
         for j in range(n):
-            Matrix[i].append(0)
+            A[i].append(0)
 
     for j in range(0,n):
-        Matrix[j][j] = 2
+        A[j][j] = 2
         for i in range(j+1,n):
-            Matrix[j][i] = -1
-            Matrix[i][j] = -1
+            A[j][i] = -1
+            A[i][j] = -1
             break
-    return Matrix
 
 def MatPrint(matrix):
-    n = len(matrix)
+    global n
     for i in range(n):
         print(matrix[i])
 
@@ -46,7 +45,11 @@ def dCheck(A , num_to_check):
     else:
         print("not all diagonal elements are ",num_to_check)
 
-def B_VExact_Yj_GENERATE(n,H,L,Delta_P,Viscosity):
+def B_VExact_Yj_GENERATE(H,L,Delta_P,Viscosity):
+    global B
+    global V_exact_LIST
+    global Y_j_LIST
+    global n
     Delta_Y = (2 * H) / 4
     V_max = 1.9047619047619047 #(Delta_P * H ** 2) / (2 * Viscosity * L)
 
@@ -67,5 +70,3 @@ def B_VExact_Yj_GENERATE(n,H,L,Delta_P,Viscosity):
         Y_j = (-H + i * Delta_Y)
         Y_j_LIST.append(Y_j)
         V_exact_LIST.append(V_max * (1 - (Y_j / H) ** 2))
-
-    return B,V_exact_LIST,Y_j_LIST

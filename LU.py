@@ -1,11 +1,14 @@
 # The purpose of this file is to calculate the exact solutions of a matrix using LU decomposition.
-# Special thanks to Dr. John Starner
+# Special thanks to Dr. John Starner for helping me develop DECOMP
 import matplotlib.pyplot as plt
 import MatrixGeneration
 
-def DECOMP(A,n, SHOW_LU):
+def DECOMP(SHOW_LU):
     # Construct L and U matrices
     # set up the L matrix
+    global A
+    global U
+    global n
     global L  # will be needed in other parts of the program
 
     # set up the L matrix
@@ -18,11 +21,10 @@ def DECOMP(A,n, SHOW_LU):
     for i in range(n):
         L[i][i] = 1
     # set up the U matrix
-    global U
     U = A.copy()
 
     # calculate the L and the U matrices
-
+    # n = 3         0->1
     for j in range(0, n - 1): # j is meant to represent the previous row
         for i in range(j + 1, n): # i is meant to represent the current row
             # make U[i][k] = 0
@@ -42,8 +44,9 @@ def DECOMP(A,n, SHOW_LU):
 
 
 # forward elimination
-def FORWARD_SUB(n,SHOW_y):
-
+def FORWARD_SUB(SHOW_y):
+    global y
+    global n
     global B
 
     # set up y
@@ -57,12 +60,14 @@ def FORWARD_SUB(n,SHOW_y):
         y[i] = (-1 * sum_row) + B[i]
     if SHOW_y == True:
         print("y =\n", y)
-    return y
+
 
 # backward elimination
-def BACKWARD_SUB(y,n,SHOW_x):
+def BACKWARD_SUB(SHOW_x):
     # set up x
     global x
+    global y
+    global n
 
     x = [0 for i in range(n)]
 
@@ -76,12 +81,11 @@ def BACKWARD_SUB(y,n,SHOW_x):
         print("x =\n", x)
     return x
 
-def SOLVE(A,SHOW_LU,SHOW_Y,SHOW_X):
+def SOLVE(SHOW_LU,SHOW_Y,SHOW_X):
     import matplotlib.pyplot as pt
+    global A
     global B
     global n
-
-    n = len(A)
 
     H = int(float(input("H = ")))
     L = int(float(input("L = ")))
@@ -94,20 +98,17 @@ def SOLVE(A,SHOW_LU,SHOW_Y,SHOW_X):
     y_points.append(y_points[-1]+0.5)
 
 
-    DECOMP(A,n,SHOW_LU)
-    y = FORWARD_SUB(n,SHOW_Y)
-    x = BACKWARD_SUB(y,n,SHOW_X)
+    DECOMP(SHOW_LU)
+    FORWARD_SUB(SHOW_Y)
+    BACKWARD_SUB(SHOW_X)
 
     x.insert(0,0)
     x.append(0)
     print("x is")
     print(x)
-    print("y is")
+    print("y points are ")
     print(y_points)
 
 
     plt.plot(x,y_points)
     plt.show()
-
-
-
