@@ -11,11 +11,11 @@ def GENERATE(n):
         for j in range(n):
             Matrix[i].append(0)
 
-    for j in range(0,n):
+    for j in range(0,n): # represents the previous row
         Matrix[j][j] = 2
-        for i in range(j+1,n):
+        for i in range(j+1,n): # represents the next row
             Matrix[j][i] = -1
-            Matrix[i][j] = -1
+            Matrix[i][j] = -1 # stores -1 on the next row
             break
     return Matrix
 
@@ -46,7 +46,7 @@ def dCheck(A , num_to_check):
 
 def B_VExact_Yj_GENERATE(n,H,L,Delta_P,Viscosity):
     Delta_Y = (2 * H) / 4
-    V_max = 1.9047619047619047 #(Delta_P * H ** 2) / (2 * Viscosity * L)
+    V_max = (Delta_P * H ** 2) / (2 * Viscosity * L)
 
     F_j = ((Delta_Y)**2 * (2*V_max))/(H**2)
 
