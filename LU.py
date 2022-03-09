@@ -3,7 +3,7 @@
 import matplotlib.pyplot as plt
 import MatrixGeneration
 
-def DECOMP(SHOW_LU):
+def DECOMP(SHOW_LU=True):
     # Construct L and U matrices
     # set up the L matrix
     global A
@@ -44,7 +44,7 @@ def DECOMP(SHOW_LU):
 
 
 # forward elimination
-def FORWARD_SUB(SHOW_y):
+def FORWARD_SUB(SHOW_y=True):
     global y
     global n
     global B
@@ -63,7 +63,7 @@ def FORWARD_SUB(SHOW_y):
 
 
 # backward elimination
-def BACKWARD_SUB(SHOW_x):
+def BACKWARD_SUB(SHOW_x=True):
     # set up x
     global x
     global y
@@ -81,18 +81,14 @@ def BACKWARD_SUB(SHOW_x):
         print("x =\n", x)
     return x
 
-def SOLVE(SHOW_LU,SHOW_Y,SHOW_X):
-    import matplotlib.pyplot as pt
-    global A
-    global B
-    global n
+def SOLVE(SHOW_LU=True,SHOW_Y=True,SHOW_X=True): #make code to ask the user for these values
 
-    H = int(float(input("H = ")))
-    L = int(float(input("L = ")))
-    deltaP = int(float(input("Delta P = ")))
-    Nu = int(float(input("Viscosity = ")))
+    H = float(input("H = "))
+    L = float(input("L = "))
+    deltaP = float(input("Delta P = "))
+    Nu = float(input("Viscosity = "))
     print("\n***GENERATING***\n")
-    B,VE_points,y_points = MatrixGeneration.B_VExact_Yj_GENERATE(n,H,L,deltaP,Nu)
+    B,VE_points,y_points = MatrixGeneration.B_VExact_Yj_GENERATE(H,L,deltaP,Nu)
 
     y_points.insert(0,y_points[0]-0.5) # add one more Yj point to the list, for graphing purposes
     y_points.append(y_points[-1]+0.5)
