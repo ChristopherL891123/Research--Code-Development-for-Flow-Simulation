@@ -75,15 +75,15 @@ def BACKWARD_SUB(y,n,U,SHOW_x):
 def SOLVE(A,n,SHOW_LU,SHOW_Y,SHOW_X):
     import matplotlib.pyplot as pt
 
-    H = float(input("H = "))
-    L = float(input("L = "))
-    deltaP = float(input("Delta P = "))
-    Nu = float(input("Viscosity = "))
+    H = 1#float(input("H = "))
+    L = 5#float(input("L = "))
+    deltaP = 8.0#float(input("Delta P = "))
+    Nu = 0.42#float(input("Viscosity = "))
     print("\n***GENERATING***\n")
     B,VE_points,y_points = MatrixGeneration.B_VExact_Yj_GENERATE(n,H,L,deltaP,Nu)
 
-    y_points.insert(0,y_points[0]-0.5) # add one more Yj point to the list, for graphing purposes
-    y_points.append(y_points[-1]+0.5)
+    y_points.insert(0,-H)
+    y_points.append(H)
 
 
     U,L = DECOMP(A,n,SHOW_LU)
