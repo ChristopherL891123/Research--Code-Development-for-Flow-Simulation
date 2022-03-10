@@ -73,7 +73,6 @@ def BACKWARD_SUB(y,n,U,SHOW_x):
     return x
 
 def SOLVE(A,n,SHOW_LU,SHOW_Y,SHOW_X):
-    import matplotlib.pyplot as pt
 
     H = 1#float(input("H = "))
     L = 5#float(input("L = "))
