@@ -72,7 +72,7 @@ def BACKWARD_SUB(y,n,U,SHOW_x):
 
     return x
 
-def SOLVE(A,n,SHOW_LU,SHOW_Y,SHOW_X):
+def SOLVE(A,n,SHOW_LU=False,SHOW_Y_Vector=False,SHOW_X=False,SHOW_Ypoints=False):
 
     H = 1#float(input("H = "))
     L = 5#float(input("L = "))
@@ -86,15 +86,16 @@ def SOLVE(A,n,SHOW_LU,SHOW_Y,SHOW_X):
 
 
     U,L = DECOMP(A,n,SHOW_LU)
-    y = FORWARD_SUB(n,L,B,SHOW_Y)
+    y = FORWARD_SUB(n,L,B,SHOW_Y_Vector)
     x = BACKWARD_SUB(y,n,U,SHOW_X)
 
     x.insert(0,0)
     x.append(0)
-    print("x is")
-    print(x)
-    print("y is")
-    print(y_points)
+    if SHOW_Ypoints == True:
+        print("x is")
+        print(x)
+        print("y points are is")
+        print(y_points)
 
 
     plt.plot(x,y_points)
