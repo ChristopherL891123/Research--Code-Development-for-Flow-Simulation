@@ -1,7 +1,6 @@
 import LU
 import MatrixGeneration
 import GUI_RESEARCH
-import matplotlib as mp
 """"Solves Ax = b """
 
 def main():

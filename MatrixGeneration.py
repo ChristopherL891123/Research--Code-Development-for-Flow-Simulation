@@ -3,7 +3,7 @@ import random
 def GENERATE(n):
     #set up the Matrix
     """Takes in 2 parameters: 1. the blank matrix to fill with generated values
-    2. the number of rows and items(generates an NxN matrix) """
+    2. the number of rows and items(generates an NxN tridiagonal matrix) """
     Matrix = []
     #set up the matrix
     for i in range(n):
@@ -19,7 +19,7 @@ def GENERATE(n):
             break
     return Matrix
 
-def MatPrint(matrix,n):
+def MatPrint(matrix, n):
     for i in range(n):
         print(matrix[i])
 
@@ -66,3 +66,4 @@ def B_VExact_Yj_GENERATE(n,H,L,Delta_P,Nu):
         V_exact_LIST.append(V_max * (1 - (Y_j / H) ** 2))
 
     return B,V_exact_LIST,Y_j_LIST
+
