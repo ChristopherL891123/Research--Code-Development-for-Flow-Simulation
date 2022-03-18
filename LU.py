@@ -78,7 +78,6 @@ def SOLVE(A,n,SHOW_LU=False,SHOW_Y_Vector=False,SHOW_X=False,SHOW_Ypoints=False)
     L = 5#float(input("L = "))
     deltaP = 8.0#float(input("Delta P = "))
     Nu = 0.42#float(input("Viscosity = "))
-    print("\n***GENERATING***\n")
     B,VE_points,y_points = MatrixGeneration.B_VExact_Yj_GENERATE(n,H,L,deltaP,Nu)
 
     y_points.insert(0,-H)
