@@ -22,12 +22,16 @@ def GUI():
                 messagebox.showinfo("","GENERATING")
                 main.main_GUI(int(Textbox.get("1.0","end")))
 
+                labelTable.delete(1.0,"end")
+                labelTable.insert(1.0,main.GUI_table)
+
         except:
             messagebox.showinfo("", "ERROR: Size of matrix A must be a positive integer.")
             import traceback
             traceback.print_exc()
 
     myGUI = tkinter.Tk()
+    myGUI.geometry("1500x800")
     myGUI.title("Code Development for Flow Simulation")
 
     label1 = tkinter.Label(myGUI,text= "The purpose of this research is to model a numerical flow simulation of the one-dimensional Poiseuille model using Python code. ",font=("Times", "12"))
@@ -44,11 +48,15 @@ def GUI():
     Textbox = tkinter.Text(myGUI,height=2,width=10)
     Textbox.place(x=500,y=60)
 
+    scrollbar = tkinter.Scrollbar(myGUI)
+    scrollbar.place(x=300,y=90)
+    labelTable = tkinter.Text(myGUI,height=40,width=150)
+    labelTable.place(x=100,y=100)
 
     ExitButton = tkinter.Button(myGUI,text="EXIT",height=1,width=10,background="light blue", foreground='black',command= EXITmyGUI)
 
-
-    ExitButton.place(x=500,y=120)
+    ExitButton.place(x=500,y=750)
     myGUI.mainloop()
+
 
 GUI()

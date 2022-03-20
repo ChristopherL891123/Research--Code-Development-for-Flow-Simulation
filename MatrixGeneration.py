@@ -22,6 +22,7 @@ def GENERATE(n):
 def MatPrint(matrix, n):
     for i in range(n):
         print(matrix[i])
+    return
 
 """RAND(size) Makes a random square matrix of a specified size and specified range, range should be a positive number"""
 
@@ -43,27 +44,25 @@ def dCheck(A , num_to_check):
         print("all diagonal elements are ",num_to_check)
     else:
         print("not all diagonal elements are ",num_to_check)
+    return
 
 def B_VExact_Yj_GENERATE(n,H,L,Delta_P,Nu):
+
     Delta_Y = (2 * H) / (n+1)
     V_max = (Delta_P * H ** 2) / (2 * Nu * L)
     F_j = ((Delta_Y)**2 * (2*V_max))/(H**2)
 
-    B = []
-    for i in range(n):
-        B.append(0)
+    B = [F_j for i in range(n)]
 
-    for i in range(n):
-        B[i] = F_j
-
-    V_exact_LIST = []
+    EV = [0.0]
     Y_j_LIST = []
 
     # calculate Y_j and V_exact and append it to their respective lists for data processing
     for i in range(1,n+1):
         Y_j = (-H + i * Delta_Y)
         Y_j_LIST.append(Y_j)
-        V_exact_LIST.append(V_max * (1 - (Y_j / H) ** 2))
+        EV.append(V_max * (1 - (Y_j / H) ** 2))
 
-    return B,V_exact_LIST,Y_j_LIST
+    EV.append(0.0)
+    return B,EV,Y_j_LIST
 
