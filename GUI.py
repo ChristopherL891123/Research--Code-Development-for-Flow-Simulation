@@ -18,7 +18,7 @@ def GUI():
 
     def display():
         try:
-            if int(Textbox.get("1.0","end")) >= 0:
+            if int(Textbox.get("1.0","end").strip() ) >= 0:
                 messagebox.showinfo("","GENERATING")
                 main.main_GUI(int(Textbox.get("1.0","end")))
 
