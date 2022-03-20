@@ -1,7 +1,6 @@
 # The purpose of this file is to calculate the exact solutions of a matrix using LU decomposition.
 # Special thanks to Dr. John Starner
 
-import matplotlib.pyplot as plt
 import prettytable as p
 import MatrixGeneration
 
