@@ -1,3 +1,5 @@
+
+#Special thanks to Dr. Charles Thangaraj
 import random
 
 def GENERATE(n):
@@ -24,9 +26,29 @@ def MatPrint(matrix, n):
         print(matrix[i])
     return
 
-"""RAND(size) Makes a random square matrix of a specified size and specified range, range should be a positive number"""
+def MultMatrix(a,b):
+    """returns the prodcut of two square matrices"""
+    c = []
+    n = len(a)
+    # set up the matrix
+    for i in range(n):
+        c.append([])
+        for j in range(n):
+            c[i].append(0)
+
+    for i in range(n):
+        for j in range(n):
+            sum = 0
+            for k in range(n):
+                sum += a[i][k] * b[k][j]
+            c[i][j] = sum
+
+    return c
+
 
 def RAND(size, Range):
+    """RAND(size) Makes a random square matrix of a specified size and specified range, range should be a positive number"""
+
     R = []
     for i in range(size):
         R.append([])
