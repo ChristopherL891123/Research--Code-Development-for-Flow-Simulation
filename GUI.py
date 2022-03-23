@@ -3,7 +3,7 @@
 import tkinter
 from tkinter import messagebox #used to display message boxes to the user
 import main
-
+import matplotlib.pyplot as plt
 
 def EXITmyGUI():  # this is used to tell the program what to do when it is clicked
     QuitMessage = messagebox.askyesno("Quit?",
@@ -14,13 +14,20 @@ def EXITmyGUI():  # this is used to tell the program what to do when it is click
 
 def display():
     try:
+        c = 0.0
         t = int(Textbox.get("1.0", "end").strip())
         if t > 0:
-            messagebox.showinfo("", "GENERATING")
+            # messagebox.showinfo("", "GENERATING")
             main.main_GUI(t)
+            pltTitle = "Graph for {i} discrete points".format(i=t + 2)
+            # labelTable.delete(1.0, "end")  #
 
-            labelTable.delete(1.0, "end")
-            labelTable.insert(1.0, main.GUI_table)
+            labelTable.insert(1.0,"{a} \n\n\n".format(a=pltTitle))
+            labelTable.insert(c, main.GUI_table)  #
+            c += 1.0
+            plt.plot(main.x, main.y_points)
+            plt.title(pltTitle)
+            plt.show()
 
     except:
         messagebox.showinfo("", "ERROR: Size of matrix A must be a positive integer.")

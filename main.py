@@ -20,12 +20,13 @@ def main():
 
 def main_GUI(n):
     A = m.GENERATE(n) #Generates a matrix called Matrix
-    print()
+
+    #global variable used in GUI.py
     global GUI_table
+    global GUI_table,x,y_points
+
     GUI_table,x,y_points = LU.SOLVE(A,n,GUI=True)
 
-    plt.plot(x, y_points)
-    plt.title("Graph for {i} discrete points".format(i=n + 2))
-    plt.show()
+
 
 # main()
