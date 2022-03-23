@@ -27,7 +27,7 @@ def MatPrint(matrix, n):
     return
 
 def MultMatrix(a,b):
-    """returns the prodcut of two square matrices"""
+    """returns the product of two square matrices"""
     c = []
     n = len(a)
     # set up the matrix
