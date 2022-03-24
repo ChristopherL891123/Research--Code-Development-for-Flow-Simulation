@@ -1,4 +1,3 @@
-
 #Special thanks to Dr. Charles Thangaraj
 import random
 
@@ -72,7 +71,7 @@ def B_VExact_Yj_GENERATE(n,H,L,Delta_P,Nu):
 
     Delta_Y = (2 * H) / (n+1)
     V_max = (Delta_P * H ** 2) / (2 * Nu * L)
-    F_j = ((Delta_Y)**2 * (2*V_max))/(H**2)
+    F_j = (Delta_Y**2 * (2*V_max))/(H**2)
 
     B = [F_j for i in range(n)]
 

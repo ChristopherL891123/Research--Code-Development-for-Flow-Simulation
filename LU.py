@@ -6,7 +6,7 @@ import MatrixGeneration
 
 
 def DECOMP(A, n, SHOW_LU):
-    """Decomposes the A matrix into LU, using Gaussian elimination. Returns both L and U matrices"""
+    """Decomposes the A matrix into LU, using Gaussian elimination. Returns L and U matrices"""
 
     # set up the L matrix
     L = []
@@ -73,6 +73,7 @@ def BACKWARD_SUB(y, n, U, SHOW_x):
         for j in range(i, 0):
             sum_row += U[i][j] * x[j]
         x[i] = ((-1 * sum_row) + y[i]) / U[i][i]
+
     if SHOW_x:
         print("x =\n", x)
 
@@ -120,7 +121,6 @@ def SOLVE(A, n, GUI,SHOW_LU=False, SHOW_Y_Vector=False, SHOW_X=False, SHOW_Ypoin
     Absolute_error.append(0.0)
     Relative_error.append(0.0)
 
-    # update with absolute and estimate error column
     table = p.PrettyTable()
     table.field_names = ['k', 'Y_j points', 'Solution', 'Exact Solution', 'Absolute Error', 'Relative Error']
     for i in range(n + 2):
@@ -136,8 +136,68 @@ def SOLVE(A, n, GUI,SHOW_LU=False, SHOW_Y_Vector=False, SHOW_X=False, SHOW_Ypoin
     print(table)
     return x,y_points
 
-def TabPrint(n, y, x, EV):
-    print("|Y_j\t|    Solution   \t|Exact Solution   |")
-    for i in range(n + 2):
-        print('|', 45 * '-', end='|\n', sep='')
-        print("|%.4f|%.16f|%.16f|" % (y[i], x[i], EV[i]))
+
+def printSpaces(num):
+    t = ""
+    for i in range(num):
+        t += ' '
+    return t
+
+
+def TabPrint(n, y, x, EV,abs_err,rel_err):
+    print("|Y_j\t|    Solution   \t|Exact Solution   |Absolute Error   |Relative Error   |")
+    print(45 * '_', end='\n', sep='')
+
+    # for i in range(n + 2):
+    #     # if y[i] < 0 and x[i] < 0 and EV[i] < 0:
+    #     #     print("|%.4f|%.16f|%.16f|" % (y[i], x[i], EV[i]))
+    #     # else:
+    #     tY = str(round(y[i],16))
+    #     tX = str(round(x[i],16))
+    #     tEV = str(round(EV[i],16))
+    #     tAbs_err = str(round(abs_err[i],16))
+    #     tRel_err = str(round(rel_err[i],16))
+    #
+    #     if y[i] >= 0:
+    #         tY += ' '
+    #
+    #     if x[i] >= 0:
+    #         tX += ' '
+    #
+    #     if EV[i] >= 0:
+    #         tEV += ' '
+    #
+    #     if abs_err[i] >= 0:
+    #         tAbs_err += ' '
+    #
+    #     if rel_err[i] >= 0:
+    #         tRel_err += ' '
+    #
+    #     print(f"| {tY} | {tX} | {tEV} | {tAbs_err} | {tRel_err} |")
+
+    Table = [[str(i),str(round(y[i],4)),str(round(x[i],16)),str(round(EV[i],16)),str(round(abs_err[i],16)),str(round(rel_err[i],16))] for i in range(n)]
+
+    for i in range(1,n):
+        for j in range(1,n):
+
+            lt1 = len(Table[i][j])
+            lt2 = len(Table[i-1][j-1])
+
+            if lt1 > lt2:
+                Table[i-1][j-1] += printSpaces(lt1-lt2)
+
+            elif lt2 > lt1:
+                Table[i][j] += printSpaces(lt2-lt1)
+
+            Table[i][j] += '|'
+            Table[i-1][j-1] += '|'
+
+    return Table
+def roundedStr(num,digits):
+    '''Returns a rounded number as a string'''
+    return str(round(num,digits))
+
+
+# t = TabPrint(3,[-1.3654168131454135314638,0.3654168131454135314616315361354,1.1531536175631736541681314541353146,2.36541681314541353146135153615367,3.1365416813145413531463651536751],[-0.1254574786145564736541681314541353146,-2.584854714365416813145413531465,3.153654168131454135314654754784687,4.1325412436541681314541353146551425142,0.136536541681314541353146156317457461],[-0.453654168131454135314645547547,-1.133654168131454135314654145324315,2.135436541681314541353146514735435,3.14365416813145413531463657175,0.1365416813145413531463574415361365],[0.13216365416813145413531465563136,-15.13561536541681314541353146367157683,6.136536541681314541353146357536,7.136536541681314541353146637581,8.135365416813145413531467663571],[0.1365416813145413531463567613673,-7.13636541681314541353146776853,8.1356353654168131454135314678163578,1.314365416813145413531465136571,5.1543115631563654168131454135314631])
+# for i in range(len(t)):
+#     print(t[i])
