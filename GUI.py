@@ -2,7 +2,6 @@
 
 import tkinter
 from tkinter import messagebox  # used to display message boxes to the user
-import main
 import matplotlib.pyplot as plt
 import LU
 import MatrixGeneration as m
@@ -21,25 +20,23 @@ def clearTextbox():
 
 def display():
     try:
-        c = 0.0  #
         t = int(Textbox.get("1.0", "end").strip())
         if t > 0:
             A = m.GENERATE(t)
             GUI_table, x, y_points = LU.SOLVE(A, t, GUI=True)
 
-            pltTitle = "Graph for {i} discrete points".format(i=t + 2)
-            # labelTable.delete(1.0, "end")  #
 
-            labelTable.insert(1.0, "{a} \n\n\n".format(a=pltTitle))
-            labelTable.insert(c, GUI_table)  #
-            c += 1.0
+
+            labelTable.insert(0.0, "{a} \n\n\n".format(a= "Table for "+str(t+2)+" discrete points"))   # """Insert CHARS before the characters at INDEX."""
+            labelTable.insert(2.0, GUI_table + '\n\n')
+
             plt.plot(x, y_points)
-            plt.title(pltTitle)
+            plt.title("Graph for {i} discrete points".format(i=t + 2))
             plt.show()
 
     except:
-        messagebox.showinfo("", "ERROR: Size of matrix A must be a positive integer.")
         import traceback
+        messagebox.showinfo("", "ERROR: Size of matrix A must be a positive integer.")
         traceback.print_exc()
 
 
