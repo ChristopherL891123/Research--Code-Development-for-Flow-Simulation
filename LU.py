@@ -84,34 +84,29 @@ def BACKWARD_SUB(y, n, U, SHOW_x):
     return x
 
 
-def SOLVE(A, n, GUI, SHOW_LU=False, SHOW_Y_Vector=False, SHOW_X=False, SHOW_Ypoints=False,SHOW_errors=False):
+def SOLVE(A, n, GUI, SHOW_LU=False, SHOW_x=False, SHOW_Yj=False,SHOW_errors=False):
     """Solves the matrix equation Ax = b and then plots the graph of the calculated velocity at the discrete points.
         Makes a table with the y points, the Exact Velocity, and the x points along with the error estimates """
 
+
     H = 1  # float(input("H = "))
-    L = 5  # float(input("L = "))
+    l = 5  # float(input("L = "))
     deltaP = 8.0  # float(input("Delta P = "))
     Nu = 0.42  # float(input("Viscosity = "))
-    B, EV_points, y_points = MatrixGeneration.B_VExact_Yj_GENERATE(n, H, L, deltaP, Nu)
+    B, EV, Y_j = MatrixGeneration.B_VExact_Yj_GENERATE(n, H, l, deltaP, Nu)
     # y_points.insert(0, -H)
-    y_points.append(H)
 
     U, L = DECOMP(A, n, SHOW_LU)
-    y = FORWARD_SUB(n, L, B, SHOW_Y_Vector)
-    x = BACKWARD_SUB(y, n, U, SHOW_X)
+    y = FORWARD_SUB(n, L, B, False)
+    x = BACKWARD_SUB(y, n, U, False)
 
 
-    Absolute_error = [0.0]
-    Relative_error = [0.0]
+    Absolute_error = [0.0]  #velocity at the wall
+    Relative_error = [0.0]  # velocity at the wall
 
-    for i in range(1, n + 2): # start at index 1 because x[0] = 0 and EV[0] = 0 , Absolute error is 0
-        try:
-            Absolute_error.append(abs(x[i] - EV_points[i]))
-            Relative_error.append(abs(Absolute_error[i] / EV_points[i]))
-
-        except ZeroDivisionError:
-            Absolute_error.append(0.0)
-            Relative_error.append(0.0)
+    for i in range(1, n+1): # start at index 1 because x[0] = 0 and EV[0] = 0 , Absolute error is 0
+            Absolute_error.append(abs(x[i] - EV[i]))
+            Relative_error.append(abs(Absolute_error[i] / EV[i]))
 
     Absolute_error.append(0.0)
     Relative_error.append(0.0)
@@ -119,22 +114,38 @@ def SOLVE(A, n, GUI, SHOW_LU=False, SHOW_Y_Vector=False, SHOW_X=False, SHOW_Ypoi
     table = p.PrettyTable()
     table.field_names = ['k', 'Y_j points', 'Solution', 'Exact Solution', 'Absolute Error', 'Relative Error']
     for i in range(n + 2):
-        table.add_row([i, y_points[i], x[i], EV_points[i], Absolute_error[i], Relative_error[i]])
+        table.add_row([i, Y_j[i], x[i], EV[i], Absolute_error[i], Relative_error[i]])
 
     table.set_style(15)
 
     if GUI:
         GUI_table = table.get_string()
-        return GUI_table, x, y_points
+        return GUI_table, x, Y_j
 
-    if SHOW_Ypoints:
-         print("Y_j: ",y_points)
+    if SHOW_Yj:
+         print("Y_j: ",Y_j)
 
+    if SHOW_x:
+        print("x: ",x)
     if SHOW_errors:
          print("Absolute error: ",Absolute_error)
          print("Relative error: ",Relative_error)
 
+
     print(table)
 
-    return x, y_points
+    return x, Y_j
 
+def TabPrint(n,Y_j,x,EV,ABS_ERR,REL_ERR, option):
+    ''''prints the table with the values, option == 1 means that '''
+    if option == 1:
+
+    print()
+    a = ['k','Y_j','Solution','Exact Solution','Absolute error','Relative error']
+    b = "|{: ^8} | {: ^18} | {: ^18} | {: ^18} | {: ^18}|".format(*a)
+    print(b)
+    print(len(b) * '-')
+    for i in range(n+2):
+        t = [i, Y_j[i], x[i], EV[i], ABS_ERR[i], REL_ERR[i]]
+        print("|{: ^8} | {: ^18} | {: ^18} | {: ^18} | {: ^18}|".format(*t))
+    print(len(b) * '-')

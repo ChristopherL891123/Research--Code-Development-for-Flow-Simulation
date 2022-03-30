@@ -88,5 +88,4 @@ def B_VExact_Yj_GENERATE(n, H, L, Delta_P, Nu):
         Y_j_LIST.append(Y_j)
         EV.append(V_max * (1 - (Y_j / H) ** 2))
 
-    EV.append(0.0)
     return B, EV, Y_j_LIST
