@@ -84,17 +84,21 @@ def BACKWARD_SUB(y, n, U, SHOW_x):
     return x
 
 
-def SOLVE(A, n, GUI, SHOW_LU=False, SHOW_x=False, SHOW_Yj=False,SHOW_errors=False):
+def SOLVE(A, n, GUI, SHOW_LU=False, SHOW_x=False, SHOW_Yj=False,SHOW_errors=False,l=0,deltaP=0,H=0,Nu=0):
     """Solves the matrix equation Ax = b and then plots the graph of the calculated velocity at the discrete points.
         Makes a table with the y points, the Exact Velocity, and the x points along with the error estimates """
 
-
-    H = float(input("H = ")) # radius
-    l = float(input("L = ")) #length of channel
-    deltaP = float(input("Delta P = "))  #change in pressure
-    Nu = float(input("Viscosity = "))   #viscosity
-    B, EV, Y_j = MatrixGeneration.B_VExact_Yj_GENERATE(n, H, l, deltaP, Nu)
-    # y_points.insert(0, -H)
+    # if the parameter GUI is true, it will take the collected values from the textboxes and used them to generate the b vector, the exct velocty and the Y_j points
+    # else it asks the user for the input, this is for the console version of the program.
+    if GUI:
+      B, EV, Y_j = MatrixGeneration.B_VExact_Yj_GENERATE(n, H, l, deltaP, Nu)
+    else:
+      H = float(input("H = "))  # radius
+      l = float(input("L = "))  # length of channel
+      deltaP = float(input("Delta P = "))  # change in pressure
+      Nu = float(input("Viscosity = "))  # viscosity
+      B, EV, Y_j = MatrixGeneration.B_VExact_Yj_GENERATE(n, H, l, deltaP, Nu)
+      # y_points.insert(0, -H)
 
     U, L = DECOMP(A, n, SHOW_LU)
     y = FORWARD_SUB(n, L, B, False)

@@ -21,15 +21,21 @@ def clearTextbox():
 def display():
     try:
         n = int(Textbox.get("1.0", "end").strip())
+        length = float(textboxL.get("1.0", "end").strip())
+        nu = float(textboxNu.get("1.0", "end").strip())
+        DeltaP = float(textboxDeltaP.get("1.0", "end").strip())
+        h = float(textboxH.get("1.0", "end").strip())
+
         if n > 0:
             A = m.GENERATE(n)
-            GUI_table, x, y_points = LU.SOLVE(A, n, GUI=True)
+            GUI_table, x, y_points = LU.SOLVE(A, n, l=length,deltaP=DeltaP,Nu=nu,H=h,GUI=True)
 
             print(x,'\n',y_points)
 
-            labelTable.insert(0.0, "{a} \n\n\n".format(a= "Table for "+str(n+2)+" discrete points"))                                                # """Insert CHARS before the characters at INDEX."""
+            labelTable.insert(0.0, "{a} , {b}, {c}, {d}, {e} . \n\n\n".format(a= "Table for "+str(n+2)+" discrete points",b='η = '+str(nu),c="Length of channel = "+str(length),d='Radius = '+str(h),e="ΔP = "+str(DeltaP)))
             labelTable.insert(2.0, GUI_table + '\n\n')
 
+            plt.margins(x=0,y=0,tight=True)
             plt.plot(x, y_points)
             plt.title("Graph for {i} discrete points".format(i=n + 2))
             plt.show()
