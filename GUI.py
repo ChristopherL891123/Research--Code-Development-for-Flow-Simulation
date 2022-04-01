@@ -20,18 +20,18 @@ def clearTextbox():
 
 def display():
     try:
-        t = int(Textbox.get("1.0", "end").strip())
-        if t > 0:
-            A = m.GENERATE(t)
-            GUI_table, x, y_points = LU.SOLVE(A, t, GUI=True)
+        n = int(Textbox.get("1.0", "end").strip())
+        if n > 0:
+            A = m.GENERATE(n)
+            GUI_table, x, y_points = LU.SOLVE(A, n, GUI=True)
 
 
 
-            labelTable.insert(0.0, "{a} \n\n\n".format(a= "Table for "+str(t+2)+" discrete points"))   # """Insert CHARS before the characters at INDEX."""
+            labelTable.insert(0.0, "{a} \n\n\n".format(a= "Table for "+str(n+2)+" discrete points"))                                                # """Insert CHARS before the characters at INDEX."""
             labelTable.insert(2.0, GUI_table + '\n\n')
 
             plt.plot(x, y_points)
-            plt.title("Graph for {i} discrete points".format(i=t + 2))
+            plt.title("Graph for {i} discrete points".format(i=n + 2))
             plt.show()
 
     except:

@@ -1,6 +1,5 @@
 # The purpose of this file is to calculate the exact solutions of a matrix using LU decomposition.
 # Special thanks to Dr. John Starner
-import tkinter
 
 import prettytable.prettytable as p
 import MatrixGeneration
@@ -89,10 +88,10 @@ def SOLVE(A, n, GUI, SHOW_LU=False, SHOW_x=False, SHOW_Yj=False,SHOW_errors=Fals
         Makes a table with the y points, the Exact Velocity, and the x points along with the error estimates """
 
 
-    H = 1  # float(input("H = "))
-    l = 5  # float(input("L = "))
-    deltaP = 8.0  # float(input("Delta P = "))
-    Nu = 0.42  # float(input("Viscosity = "))
+    H = float(input("H = ")) # radius
+    l = float(input("L = ")) #length of channel
+    deltaP = float(input("Delta P = "))  #change in pressure
+    Nu = float(input("Viscosity = "))   #viscosity
     B, EV, Y_j = MatrixGeneration.B_VExact_Yj_GENERATE(n, H, l, deltaP, Nu)
     # y_points.insert(0, -H)
 
@@ -130,22 +129,37 @@ def SOLVE(A, n, GUI, SHOW_LU=False, SHOW_x=False, SHOW_Yj=False,SHOW_errors=Fals
     if SHOW_errors:
          print("Absolute error: ",Absolute_error)
          print("Relative error: ",Relative_error)
-
-
     print(table)
-
     return x, Y_j
 
-def TabPrint(n,Y_j,x,EV,ABS_ERR,REL_ERR, option):
-    ''''prints the table with the values, option == 1 means that '''
-    if option == 1:
 
-    print()
+def TabPrint(n,Y_j,x,EV,ABS_ERR,REL_ERR, option):
+
+    tableString = ""
+
     a = ['k','Y_j','Solution','Exact Solution','Absolute error','Relative error']
-    b = "|{: ^8} | {: ^18} | {: ^18} | {: ^18} | {: ^18}|".format(*a)
-    print(b)
-    print(len(b) * '-')
-    for i in range(n+2):
+    b = "|{: ^8} | {: ^18} | {: ^18} | {: ^18} | {: ^18}|{: ^18}|".format(*a)
+    tableString += b + '\n'
+    tableString += (len(b) * '-') + '\n'
+
+    for i in range(n):
         t = [i, Y_j[i], x[i], EV[i], ABS_ERR[i], REL_ERR[i]]
-        print("|{: ^8} | {: ^18} | {: ^18} | {: ^18} | {: ^18}|".format(*t))
-    print(len(b) * '-')
+        tableString += "|{: ^8} | {: ^18} | {: ^18} | {: ^18} | {: ^18}|".format(*t) +'\n'
+
+    tableString += (len(b) * '-') + '\n'
+
+    if option == 1:
+        print(tableString)
+        return
+
+    if option == 2:
+        return tableString
+
+
+ #    if GUI:
+ #
+ #        return TabPrint(len(x),Y_j,x,EV,Absolute_error,Relative_error,2), x, Y_j
+ #
+ #
+ #
+ # end print(TabPrint(len(x),Y_j,x,EV,Absolute_error,Relative_error,1))
