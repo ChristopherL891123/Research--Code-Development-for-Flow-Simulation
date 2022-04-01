@@ -25,7 +25,7 @@ def display():
             A = m.GENERATE(n)
             GUI_table, x, y_points = LU.SOLVE(A, n, GUI=True)
 
-
+            print(x,'\n',y_points)
 
             labelTable.insert(0.0, "{a} \n\n\n".format(a= "Table for "+str(n+2)+" discrete points"))                                                # """Insert CHARS before the characters at INDEX."""
             labelTable.insert(2.0, GUI_table + '\n\n')
@@ -56,16 +56,39 @@ label3 = tkinter.Label(myGUI, text="Size of matrix A to generate: ", font=("Time
 label3.place(x=300, y=60)
 
 SubmitButton = tkinter.Button(myGUI, text="Submit", command=display)
-SubmitButton.place(x=600, y=60)
+SubmitButton.place(x=478, y=155)
 
 Textbox = tkinter.Text(myGUI, height=2, width=10)
 Textbox.place(x=500, y=60)
 
-labelTable = tkinter.Text(myGUI, height=40, width=150)
-labelTable.place(x=100, y=100)
+labelNu = tkinter.Label(myGUI,text='η: ',font=("Times", "12", "bold") )
+labelNu.place(x=140,y=110)
+
+textboxNu = tkinter.Text(myGUI, height=2, width=10)
+textboxNu.place(x=160,y=110)
+
+labelL = tkinter.Label(myGUI,text="Length of channel: ", font=("Times", "12", "bold") )
+labelL.place(x=250,y=110)
+textboxL = tkinter.Text(myGUI, height=2, width=10)
+textboxL.place(x=380,y=110)
+
+labelDeltaP = tkinter.Label(myGUI,text="ΔP: ",font=("Times", "12", "bold"))
+labelDeltaP.place(x=480,y=110)
+textboxDeltaP = tkinter.Text(myGUI, height=2, width=10)
+textboxDeltaP.place(x=530,y=110)
+
+labelH = tkinter.Label(myGUI,text="Radius H: ", font=("Times", "12", "bold") )
+labelH.place(x=630,y=110)
+textboxH = tkinter.Text(myGUI, height=2, width=10)
+textboxH.place(x=710,y=110)
+
+
+
+labelTable = tkinter.Text(myGUI, height=35, width=150)
+labelTable.place(x=10, y=185)
 
 clearButton = tkinter.Button(myGUI, text="CLEAR", command=clearTextbox)
-clearButton.place(x=1350, y=250)
+clearButton.place(x=1220, y=250)
 
 ExitButton = tkinter.Button(myGUI, text="EXIT", height=1, width=10, background="light blue", foreground='black',
                             command=EXITmyGUI)

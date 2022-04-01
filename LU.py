@@ -1,5 +1,6 @@
 # The purpose of this file is to calculate the exact solutions of a matrix using LU decomposition.
 # Special thanks to Dr. John Starner
+import tkinter
 
 import prettytable.prettytable as p
 import MatrixGeneration
@@ -129,11 +130,15 @@ def SOLVE(A, n, GUI, SHOW_LU=False, SHOW_x=False, SHOW_Yj=False,SHOW_errors=Fals
     if SHOW_errors:
          print("Absolute error: ",Absolute_error)
          print("Relative error: ",Relative_error)
+
+
     print(table)
+
     return x, Y_j
 
 
 def TabPrint(n,Y_j,x,EV,ABS_ERR,REL_ERR, option):
+    ''''prints the table with the values, option == 1 means that '''
 
     tableString = ""
 
