@@ -115,15 +115,8 @@ def SOLVE(A, n, GUI, SHOW_LU=False, SHOW_x=False, SHOW_Yj=False,SHOW_errors=Fals
     Absolute_error.append(0.0)
     Relative_error.append(0.0)
 
-    table = p.PrettyTable()
-    table.field_names = ['k', 'Y_j points', 'Solution', 'Exact Solution', 'Absolute Error', 'Relative Error']
-    for i in range(n + 2):
-        table.add_row([i, Y_j[i], x[i], EV[i], Absolute_error[i], Relative_error[i]])
-
-    table.set_style(15)
-
     if GUI:
-        GUI_table = table.get_string()
+        GUI_table = TabPrint(n,['k', 'Y_j points', 'Solution', 'Exact Solution', 'Absolute Error', 'Relative Error'],Y_j,x,EV,Absolute_error,Relative_error,2)
         return GUI_table, x, Y_j
 
     if SHOW_Yj:
@@ -131,31 +124,31 @@ def SOLVE(A, n, GUI, SHOW_LU=False, SHOW_x=False, SHOW_Yj=False,SHOW_errors=Fals
 
     if SHOW_x:
         print("x: ",x)
+
     if SHOW_errors:
          print("Absolute error: ",Absolute_error)
          print("Relative error: ",Relative_error)
 
 
-    print(table)
+    print(TabPrint(n,['k', 'Y_j points', 'Solution', 'Exact Solution', 'Absolute Error', 'Relative Error'],Y_j,x,EV,Absolute_error,Relative_error,1))
 
     return x, Y_j
 
 
-def TabPrint(n,Y_j,x,EV,ABS_ERR,REL_ERR, option):
+def TabPrint(n,header, Y_j,x,EV,ABS_ERR,REL_ERR, option):
     ''''prints the table with the values, option == 1 means that '''
 
     tableString = ""
 
-    a = ['k','Y_j','Solution','Exact Solution','Absolute error','Relative error']
-    b = "|{: ^8} | {: ^18} | {: ^18} | {: ^18} | {: ^18}|{: ^18}|".format(*a)
+    b = "|{: ^8} | {: ^30} | {: ^30} | {: ^30} | {: ^30}|{: ^30}|".format(*header)
     tableString += b + '\n'
-    tableString += (len(b) * '-') + '\n'
+    tableString += ((len(b)+2) * '-') + '\n'
 
-    for i in range(n):
+    for i in range(n+2):
         t = [i, Y_j[i], x[i], EV[i], ABS_ERR[i], REL_ERR[i]]
-        tableString += "|{: ^8} | {: ^18} | {: ^18} | {: ^18} | {: ^18}|".format(*t) +'\n'
+        tableString += "|{: ^8} | {: ^30} | {: ^30} | {: ^30} | {: ^30}| {: ^30}|".format(*t) +'\n'
 
-    tableString += (len(b) * '-') + '\n'
+    tableString += ((len(b)+2) * '-') + '\n'
 
     if option == 1:
         print(tableString)
@@ -165,10 +158,3 @@ def TabPrint(n,Y_j,x,EV,ABS_ERR,REL_ERR, option):
         return tableString
 
 
- #    if GUI:
- #
- #        return TabPrint(len(x),Y_j,x,EV,Absolute_error,Relative_error,2), x, Y_j
- #
- #
- #
- # end print(TabPrint(len(x),Y_j,x,EV,Absolute_error,Relative_error,1))

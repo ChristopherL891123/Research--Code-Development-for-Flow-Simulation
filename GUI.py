@@ -30,8 +30,8 @@ def display():
             A = m.GENERATE(n)
             GUI_table, x, y_points = LU.SOLVE(A, n, l=length,deltaP=DeltaP,Nu=nu,H=h,GUI=True)
 
-            labelTable.insert(0.0, "{a} , {b}, {c}, {d}, {e} . \n\n\n".format(a= "Table for "+str(n+2)+" discrete points",b='η = '+str(nu),c="Length of channel = "+str(length),d='Radius = '+str(h),e="ΔP = "+str(DeltaP)))
-            labelTable.insert(2.0, GUI_table + '\n\n')
+            labelTable.insert(0.0, "{a} , {b}, {c}, {d}, {e} .".format(a= "Table for "+str(n+2)+" discrete points",b='η = '+str(nu),c="Length of channel = "+str(length),d='Radius = '+str(h),e="ΔP = "+str(DeltaP)))
+            labelTable.insert(3.0, GUI_table + '\n\n')  #3.0 is the row number
 
             plt.margins(x=0,y=0,tight=True)
             plt.plot(x, y_points)
@@ -88,11 +88,11 @@ textboxH.place(x=710,y=110)
 
 
 
-labelTable = tkinter.Text(myGUI, height=35, width=150)
+labelTable = tkinter.Text(myGUI, height=35, width=180)
 labelTable.place(x=10, y=185)
 
 clearButton = tkinter.Button(myGUI, text="CLEAR", command=clearTextbox)
-clearButton.place(x=1220, y=250)
+clearButton.place(x=1455, y=250)
 
 ExitButton = tkinter.Button(myGUI, text="EXIT", height=1, width=10, background="light blue", foreground='black',
                             command=EXITmyGUI)
