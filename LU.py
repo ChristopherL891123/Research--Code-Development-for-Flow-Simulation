@@ -1,8 +1,6 @@
 # The purpose of this file is to calculate the exact solutions of a matrix using LU decomposition.
 # Special thanks to Dr. John Starner
-import tkinter
 
-import prettytable.prettytable as p
 import MatrixGeneration
 
 
@@ -86,10 +84,10 @@ def BACKWARD_SUB(y, n, U, SHOW_x):
 
 def SOLVE(A, n, GUI, SHOW_LU=False, SHOW_x=False, SHOW_Yj=False,SHOW_errors=False,l=0,deltaP=0,H=0,Nu=0):
     """Solves the matrix equation Ax = b and then plots the graph of the calculated velocity at the discrete points.
-        Makes a table with the y points, the Exact Velocity, and the x points along with the error estimates """
-
-    # if the parameter GUI is true, it will take the collected values from the textboxes and used them to generate the b vector, the exct velocty and the Y_j points
-    # else it asks the user for the input, this is for the console version of the program.
+        Makes a table with the y points, the Exact Velocity, and the x points along with the error estimates if the
+        parameter GUI is true, it will take the collected values from the textboxes and used them to generate the b
+        vector, the exact velocity and the Y_j points else it asks the user for the input, this is for the console version
+        of the program."""
     if GUI:
       B, EV, Y_j = MatrixGeneration.B_VExact_Yj_GENERATE(n, H, l, deltaP, Nu)
     else:
@@ -98,40 +96,27 @@ def SOLVE(A, n, GUI, SHOW_LU=False, SHOW_x=False, SHOW_Yj=False,SHOW_errors=Fals
       deltaP = float(input("Delta P = "))  # change in pressure
       Nu = float(input("Viscosity = "))  # viscosity
       B, EV, Y_j = MatrixGeneration.B_VExact_Yj_GENERATE(n, H, l, deltaP, Nu)
-      # y_points.insert(0, -H)
-
     U, L = DECOMP(A, n, SHOW_LU)
     y = FORWARD_SUB(n, L, B, False)
     x = BACKWARD_SUB(y, n, U, False)
-
-
     Absolute_error = [0.0]  #velocity at the wall
     Relative_error = [0.0]  # velocity at the wall
-
     for i in range(1, n+1): # start at index 1 because x[0] = 0 and EV[0] = 0 , Absolute error is 0
             Absolute_error.append(abs(x[i] - EV[i]))
             Relative_error.append(abs(Absolute_error[i] / EV[i]))
-
     Absolute_error.append(0.0)
     Relative_error.append(0.0)
-
     if GUI:
         GUI_table = TabPrint(n,['k', 'Y_j points', 'Solution', 'Exact Solution', 'Absolute Error', 'Relative Error'],Y_j,x,EV,Absolute_error,Relative_error,2)
         return GUI_table, x, Y_j
-
     if SHOW_Yj:
          print("Y_j: ",Y_j)
-
     if SHOW_x:
         print("x: ",x)
-
     if SHOW_errors:
          print("Absolute error: ",Absolute_error)
          print("Relative error: ",Relative_error)
-
-
     print(TabPrint(n,['k', 'Y_j points', 'Solution', 'Exact Solution', 'Absolute Error', 'Relative Error'],Y_j,x,EV,Absolute_error,Relative_error,1))
-
     return x, Y_j
 
 

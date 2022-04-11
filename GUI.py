@@ -30,8 +30,8 @@ def display():
             A = m.GENERATE(n)
             GUI_table, x, y_points = LU.SOLVE(A, n, l=length,deltaP=DeltaP,Nu=nu,H=h,GUI=True)
 
-            labelTable.insert(0.0, "{a} , {b}, {c}, {d}, {e} .".format(a= "Table for "+str(n+2)+" discrete points",b='η = '+str(nu),c="Length of channel = "+str(length),d='Radius = '+str(h),e="ΔP = "+str(DeltaP)))
-            labelTable.insert(3.0, GUI_table + '\n\n')  #3.0 is the row number
+            labelTable.insert(1.0, "{a} , {b}, {c}, {d}, {e} . \n".format(a= "Table for "+str(n+2)+" discrete points",b='η = '+str(nu),c="Length of channel = "+str(length),d='Radius = '+str(h),e="ΔP = "+str(DeltaP)))
+            labelTable.insert(2.0, GUI_table + '\n\n')  #https://www.pythontutorial.net/tkinter/tkinter-text/ --> 2.0 is LineNumber.ColumnNumber
 
             plt.margins(x=0,y=0,tight=True)
             plt.plot(x, y_points)
