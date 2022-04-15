@@ -1,4 +1,3 @@
-# Special thanks to Dr. Charles Thangaraj
 import random
 
 

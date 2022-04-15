@@ -22,7 +22,7 @@ def DECOMP(A, n, SHOW_LU):
     # calculate the L and the U matrices
 
     for j in range(0, n - 1):  # j is meant to represent the previous row
-        for i in range(j + 1, n):  # i is meant to represent the current row
+        for i in range(j + 1, n):  # variable i is meant to represent the current row
             # make U[i][k] = 0
             factor = U[i][j] / U[j][j]
             L[i][j] = factor
@@ -42,7 +42,7 @@ def DECOMP(A, n, SHOW_LU):
 
 # forward elimination
 def FORWARD_SUB(n, L, B, SHOW_y):
-    """""Performs forward substitution using the L matrix and the b vector whose value is known due to pressure difference.
+    """Performs forward substitution using the L matrix and the b vector whose value is known due to pressure difference.
          Returns y vector"""
 
     # set up y
@@ -54,6 +54,7 @@ def FORWARD_SUB(n, L, B, SHOW_y):
         for j in range(0, i):  # from first element, ends with diagonal element.
             sum_row += L[i][j] * y[j]
         y[i] = (-1 * sum_row) + B[i]
+
     if SHOW_y:
         print("y =\n", y)
     return y
@@ -141,5 +142,3 @@ def TabPrint(n,header, Y_j,x,EV,ABS_ERR,REL_ERR, option):
 
     if option == 2:
         return tableString
-
-
