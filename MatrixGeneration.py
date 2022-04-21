@@ -1,10 +1,9 @@
 import random
 
-
+# Matrix generation algorithm
 def GENERATE(n):
     # set up the Matrix
-    """Takes in 2 parameters: 1. the blank matrix to fill with generated values
-    2. the number of rows and items(generates an NxN tridiagonal matrix) """
+    """Generates a NxN matrix composed of 2s in the diagonal line and -1s in the lower and upper diagonal"""
     Matrix = []
     # set up the matrix
     for i in range(n):

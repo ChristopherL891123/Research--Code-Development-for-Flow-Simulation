@@ -8,15 +8,12 @@ import MatrixGeneration as m
 
 
 def EXITmyGUI():  # this is used to tell the program what to do when it is clicked
-    QuitMessage = messagebox.askyesno("Quit?",
-                                      "Are you sure you want to quit the application?")  # returns Boolean value
+    QuitMessage = messagebox.askyesno("Quit?", "Are you sure you want to quit the application?")  # returns Boolean value
     if QuitMessage == True:
         myGUI.destroy()
 
-
 def clearTextbox():
     labelTable.delete(1.0, "end")
-
 
 def display():
     try:
@@ -28,12 +25,13 @@ def display():
 
         if n > 0:
             A = m.GENERATE(n)
-            GUI_table, x, y_points = LU.SOLVE(A, n, l=length,deltaP=DeltaP,Nu=nu,H=h,GUI=True)
+            GUI_table, x, y_points = LU.SOLVE(A, n, GUI, length,DeltaP,nu,h)
 
-            labelTable.insert(1.0, "{a} , {b}, {c}, {d}, {e} . \n".format(a= "Table for "+str(n+2)+" discrete points",b='η = '+str(nu),c="Length of channel = "+str(length),d='Radius = '+str(h),e="ΔP = "+str(DeltaP)))
+            labelTable.insert(1.0, "Table for "+str(n+2)+" discrete points η = "+str(nu)+ \
+                              " Length of channel = "+str(length)+" Radius = "+str(h)+" ΔP = "+str(DeltaP)+'\n')
             labelTable.insert(2.0, GUI_table + '\n\n')  #https://www.pythontutorial.net/tkinter/tkinter-text/ --> 2.0 is LineNumber.ColumnNumber
 
-            plt.margins(x=0,y=0,tight=True)
+            plt.margins(x=0,y=0)
             plt.plot(x, y_points)
             plt.title("Graph for {i} discrete points".format(i=n + 2))
             plt.show()
@@ -94,8 +92,8 @@ labelTable.place(x=10, y=185)
 clearButton = tkinter.Button(myGUI, text="CLEAR", command=clearTextbox)
 clearButton.place(x=1455, y=250)
 
-ExitButton = tkinter.Button(myGUI, text="EXIT", height=1, width=10, background="light blue", foreground='black',
-                            command=EXITmyGUI)
+ExitButton = tkinter.Button(myGUI, text="EXIT", height=1, width=10, background="light blue",
+                            foreground='black', command=EXITmyGUI)
 ExitButton.place(x=500, y=750)
 
 myGUI.mainloop()
