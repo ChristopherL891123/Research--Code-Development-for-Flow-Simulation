@@ -25,7 +25,7 @@ def display():
 
         if n > 0:
             A = m.GENERATE(n)
-            GUI_table, x, y_points = LU.SOLVE(A, n, GUI, length,DeltaP,nu,h)
+            GUI_table, x, y_points = LU.SOLVE(A, n, True,l=length,deltaP=DeltaP,Nu=nu,H=h)
 
             labelTable.insert(1.0, "Table for "+str(n+2)+" discrete points η = "+str(nu)+ \
                               " Length of channel = "+str(length)+" Radius = "+str(h)+" ΔP = "+str(DeltaP)+'\n')

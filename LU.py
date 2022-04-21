@@ -47,7 +47,7 @@ def BACKWARD_SUB(y, n, U, SHOW_x):
     return x
 
 
-def SOLVE(A, n, GUI,l,deltaP,H,Nu, SHOW_LU=False, SHOW_x=False, SHOW_Yj=False,SHOW_errors=False):
+def SOLVE(A, n, GUI,l=0,deltaP=0,H=0,Nu=0, SHOW_LU=False, SHOW_x=False, SHOW_Yj=False,SHOW_errors=False):
     """Solves the matrix equation Ax = b and then plots the graph of the calculated velocity at the discrete points.
         Makes a table with the y points, the Exact Velocity, and the x points along with the error estimates"""
     if GUI:
