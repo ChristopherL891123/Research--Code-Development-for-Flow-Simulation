@@ -2,22 +2,24 @@ import random
 
 # Matrix generation algorithm
 def GENERATE(n):
-    # set up the Matrix
-    """Generates a NxN matrix composed of 2s in the diagonal line and -1s in the lower and upper diagonal"""
     Matrix = []
     # set up the matrix
-    for i in range(n):
+    for a in range(n):
         Matrix.append([])
-        for j in range(n):
-            Matrix[i].append(0)
+        for b in range(n):
+            Matrix[a].append(0)
 
-    for j in range(0, n):  # represents the previous row
+    i = 0
+    for j in range(0, n):
         Matrix[j][j] = 2
-        for i in range(j + 1, n):  # represents the next row
-            Matrix[j][i] = -1
-            Matrix[i][j] = -1  # stores -1 on the next row
+        if i == n-1:
             break
+        i = j + 1
+        Matrix[j][i] = -1
+        Matrix[i][j] = -1
+
     return Matrix
+
 
 
 def MatPrint(matrix, n):
@@ -25,6 +27,8 @@ def MatPrint(matrix, n):
         print(matrix[i])
     return
 
+
+MatPrint(GENERATE(105),105)
 
 def MultMatrix(a, b):
     """returns the product of two square matrices"""
@@ -73,17 +77,14 @@ def dCheck(A, num_to_check):
 def B_VExact_Yj_GENERATE(n, H, L, Delta_P, Nu):
     Delta_Y = (2 * H) / (n + 1)
     V_max = (Delta_P * H ** 2) / (2 * Nu * L)
-    F_j = (Delta_Y ** 2 * (2 * V_max)) / (H ** 2)  #in terms of Vmax, equation 75,pg 29
-
+    F_j = (Delta_Y ** 2 * (2 * V_max)) / (H ** 2)
     B = [F_j for i in range(n)]
-
     EV = []
     Y_j_LIST = []
-
-    # calculate Y_j and V_exact and append it to their respective lists for data processing
     for i in range(0, n + 2):
         Y_j = -H + i * Delta_Y
         Y_j_LIST.append(Y_j)
         EV.append(V_max * (1 - (Y_j / H) ** 2))
 
     return B, EV, Y_j_LIST
+

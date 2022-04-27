@@ -1,4 +1,4 @@
-# https://edube.org/learn/pcpp1-4-gui-programming/settling-widgets-in-the-window-s-interior-3
+# concepts learned from https://edube.org/study/pcpp1-3
 
 import tkinter
 from tkinter import messagebox  # used to display message boxes to the user
@@ -27,13 +27,15 @@ def display():
             A = m.GENERATE(n)
             GUI_table, x, y_points = LU.SOLVE(A, n, True,l=length,deltaP=DeltaP,Nu=nu,H=h)
 
-            labelTable.insert(1.0, "Table for "+str(n+2)+" discrete points η = "+str(nu)+ \
-                              " Length of channel = "+str(length)+" Radius = "+str(h)+" ΔP = "+str(DeltaP)+'\n')
+            labelTable.insert(1.0, "Table for "+str(n+2)+" discrete points, η = "+str(nu)+ \
+                              ", Length of channel = "+str(length)+", Radius = "+str(h)+", ΔP = "+str(DeltaP)+'\n')
             labelTable.insert(2.0, GUI_table + '\n\n')  #https://www.pythontutorial.net/tkinter/tkinter-text/ --> 2.0 is LineNumber.ColumnNumber
 
             plt.margins(x=0,y=0)
             plt.plot(x, y_points)
             plt.title("Graph for {i} discrete points".format(i=n + 2))
+            plt.xlabel("Velocity", fontsize=12)
+            plt.ylabel("y",rotation="horizontal",fontsize=12)
             plt.show()
 
     except:
