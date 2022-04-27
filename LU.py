@@ -43,6 +43,7 @@ def BACKWARD_SUB(y, n, U, SHOW_x):
         for j in range(i, 0):
             sum_row += U[i][j] * x[j]
         x[i] = ((-1 * sum_row) + y[i]) / U[i][i]
+    x.append(0)
     return x
 
 
