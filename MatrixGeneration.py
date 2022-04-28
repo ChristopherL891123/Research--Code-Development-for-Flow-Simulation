@@ -28,8 +28,6 @@ def MatPrint(matrix, n):
     return
 
 
-MatPrint(GENERATE(105),105)
-
 def MultMatrix(a, b):
     """returns the product of two square matrices"""
     c = []

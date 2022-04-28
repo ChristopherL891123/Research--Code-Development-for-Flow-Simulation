@@ -23,24 +23,23 @@ def display():
         DeltaP = float(textboxDeltaP.get("1.0", "end").strip())
         h = float(textboxH.get("1.0", "end").strip())
 
-        if n > 0:
-            A = m.GENERATE(n)
-            GUI_table, x, y_points = LU.SOLVE(A, n, True,l=length,deltaP=DeltaP,Nu=nu,H=h)
+        A = m.GENERATE(n)
+        GUI_table, x, y_points = LU.SOLVE(A, n, True,l=length,deltaP=DeltaP,Nu=nu,H=h)
 
-            labelTable.insert(1.0, "Table for "+str(n+2)+" discrete points, η = "+str(nu)+ \
-                              ", Length of channel = "+str(length)+", Radius = "+str(h)+", ΔP = "+str(DeltaP)+'\n')
-            labelTable.insert(2.0, GUI_table + '\n\n')  #https://www.pythontutorial.net/tkinter/tkinter-text/ --> 2.0 is LineNumber.ColumnNumber
+        labelTable.insert(1.0, "Table for "+str(n+2)+" discrete points, η = "+str(nu)+ \
+                          ", Length of channel = "+str(length)+", Radius = "+str(h)+", ΔP = "+str(DeltaP)+'\n')
+        labelTable.insert(2.0, GUI_table + '\n\n')  #https://www.pythontutorial.net/tkinter/tkinter-text/ --> 2.0 is LineNumber.ColumnNumber
 
-            plt.margins(x=0,y=0)
-            plt.plot(x, y_points)
-            plt.title("Graph for {i} discrete points".format(i=n + 2))
-            plt.xlabel("Velocity", fontsize=12)
-            plt.ylabel("y",rotation="horizontal",fontsize=12)
-            plt.show()
+        plt.margins(x=0,y=0)
+        plt.plot(x, y_points)
+        plt.title("Graph for {i} discrete points".format(i=n + 2))
+        plt.xlabel("Velocity", fontsize=12)
+        plt.ylabel("y",rotation="horizontal",fontsize=12)
+        plt.show()
 
     except:
         import traceback
-        messagebox.showinfo("", "ERROR: Size of matrix A must be a positive integer.")
+        messagebox.showinfo("Error", "ERROR: ERROR: values provided caused an error")
         traceback.print_exc()
 
 

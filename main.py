@@ -28,7 +28,7 @@ def main():
             break
 
     except:
-        print("ERROR: Size of matrix A must be a positive integer.")
+        print("ERROR: values provided caused an error")
         import traceback as t
         t.print_exc()
 
