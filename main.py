@@ -1,7 +1,7 @@
 import LU
 import MatrixGeneration as m
 import matplotlib.pyplot as plt
-
+import turtle
 
 def main():
 
@@ -14,6 +14,7 @@ def main():
         A = m.GENERATE(n) #Generates a matrix called Matrix
 
         table,x,y_points = LU.SOLVE(A, n, False,SHOW_table=True)
+
         plt.margins(x=0, y=0)
         plt.plot(x, y_points)
         plt.title("Graph for {i} discrete points".format(i=n + 2))
@@ -34,3 +35,6 @@ def main():
 
 
 main()
+
+
+
