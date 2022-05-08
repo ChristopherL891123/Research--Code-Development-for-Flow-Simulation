@@ -20,3 +20,7 @@ length of the artery.
 In this research, Python code is developed
 to visualize the simulation of a 1D Poiseuille model that helps us visualize
 how each of these variables alters the flow of blood.   
+
+Matplotlib was used for visualizing results.
+
+J. D. Hunter, "Matplotlib: A 2D Graphics Environment," in Computing in Science & Engineering, vol. 9, no. 3, pp. 90-95, May-June 2007, doi: 10.1109/MCSE.2007.55.
