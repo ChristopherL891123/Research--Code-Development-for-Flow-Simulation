@@ -44,6 +44,9 @@ def BACKWARD_SUB(y, n, U, SHOW_x):
             sum_row += U[i][j] * x[j]
         x[i] = ((-1 * sum_row) + y[i]) / U[i][i]
     x.append(0)
+
+    if SHOW_x:
+        MatrixGeneration.MatPrint(y,n)
     return x
 
 

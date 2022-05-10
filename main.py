@@ -7,9 +7,9 @@ def main():
 
     try:
 
-       x = 'y' #meant to be used as a switch that will end the program if the user does not want to make more plots
+       user_input = 'y' #meant to be used as a switch that will end the program if the user does not want to make more plots
 
-       while x == 'y':
+       while user_input == 'y':
         n = int(input("Size of matrix A to generate = "))
         A = m.GENERATE(n) #Generates a matrix called Matrix
 
@@ -20,8 +20,8 @@ def main():
         plt.title("Graph for {i} discrete points".format(i=n + 2))
         plt.show()
 
-        x = input("Continue plotting? y/n : ")
-        if x == 'y':
+        user_input = input("Continue plotting? y/n : ")
+        if user_input == 'y':
             continue
 
         else:
