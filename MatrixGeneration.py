@@ -1,7 +1,10 @@
-import random
+# Special thanks to Dr. Charles Thangaraj
 
 # Matrix generation algorithm
 def GENERATE(n):
+    """Generates a NxN matrix composed of 2s in the diagonal line
+    and -1s in the lower and upper diagonal"""
+
     Matrix = []
     # set up the matrix
     for a in range(n):
@@ -9,6 +12,7 @@ def GENERATE(n):
         for b in range(n):
             Matrix[a].append(0)
 
+    # insert values
     i = 0
     for j in range(0, n):
         Matrix[j][j] = 2
@@ -20,13 +24,11 @@ def GENERATE(n):
 
     return Matrix
 
-
-
 def MatPrint(matrix, n):
+    """Prints matrix row by row"""
     for i in range(n):
         print(matrix[i])
     return
-
 
 def MultMatrix(a, b):
     """returns the product of two square matrices"""
@@ -47,32 +49,8 @@ def MultMatrix(a, b):
 
     return c
 
-
-def RAND(size, Range):
-    """RAND(size) Makes a random square matrix of a specified size and specified range, range should be a positive number"""
-
-    R = []
-    for i in range(size):
-        R.append([])
-        for j in range(size):
-            R[i].append(random.randrange(-Range, Range))
-        R[i][i] = 2
-    return R
-
-
-def dCheck(A, num_to_check):
-    check = 0
-    for i in range(len(A)):
-        if A[i][i] == num_to_check:
-            check += 1
-    if check == len(A):
-        print("all diagonal elements are ", num_to_check)
-    else:
-        print("not all diagonal elements are ", num_to_check)
-    return
-
-
 def B_VExact_Yj_GENERATE(n, H, L, Delta_P, Nu):
+    """Generates b vector, Yj points, and Exact Velocity for each Yj point"""
     Delta_Y = (2 * H) / (n + 1)
     V_max = (Delta_P * H ** 2) / (2 * Nu * L)
     F_j = (Delta_Y ** 2 * (2 * V_max)) / (H ** 2)
@@ -85,4 +63,3 @@ def B_VExact_Yj_GENERATE(n, H, L, Delta_P, Nu):
         EV.append(V_max * (1 - (Y_j / H) ** 2))
 
     return B, EV, Y_j_LIST
-

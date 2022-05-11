@@ -1,6 +1,6 @@
 # Research--Code-Development-for-Flow-Simulation
-Research material provided by Dr. Arati Pati and Dr. Kehinde Ladipo. DECOMP and FORWARD_SUB functions defined in LU.py 
-developed with the help of Dr. John Starner. Special thanks to Dr. Arati Nanda Pati, Dr. John Starner, and my family for all thier help and support.
+Research material provided by Dr. Arati Pati and Dr. Kehinde Ladipo.  
+Special thanks to Dr. Arati Nanda Pati, Dr. John Starner, Dr. Charles Thangaraj, and my family for all thier help and support.
 
 Spring 2022
 

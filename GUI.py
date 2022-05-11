@@ -7,29 +7,35 @@ import LU
 import MatrixGeneration as m
 
 
-def EXITmyGUI():  # this is used to tell the program what to do when it is clicked
+def EXITmyGUI():  # throws a message asking to close the window
     QuitMessage = messagebox.askyesno("Quit?", "Are you sure you want to quit the application?")  # returns Boolean value
     if QuitMessage == True:
-        myGUI.destroy()
+        myGUI.destroy() #close the window
 
-def clearTextbox():
+def clearTextbox(): # clears the text box that contains the tables
     labelTable.delete(1.0, "end")
 
-def display():
+def display(): # takes the inputs from the user, and solves the matrix equation. Displays a graph, and table of calculations.
     try:
+        #get values from the textboxes
         n = int(Textbox.get("1.0", "end").strip())
         length = float(textboxL.get("1.0", "end").strip())
         nu = float(textboxNu.get("1.0", "end").strip())
         DeltaP = float(textboxDeltaP.get("1.0", "end").strip())
         h = float(textboxH.get("1.0", "end").strip())
 
+        # generate the A matrix and solve the system of linear equations
         A = m.GENERATE(n)
         GUI_table, x, y_points = LU.SOLVE(A, n, True,l=length,deltaP=DeltaP,Nu=nu,H=h)
 
-        labelTable.insert(1.0, "Table for "+str(n+2)+" discrete points, η = "+str(nu)+ \
-                          ", Length of channel = "+str(length)+", Radius = "+str(h)+", ΔP = "+str(DeltaP)+'\n')
-        labelTable.insert(2.0, GUI_table + '\n\n')  #https://www.pythontutorial.net/tkinter/tkinter-text/ --> 2.0 is LineNumber.ColumnNumber
+        # insert description of the table
+        labelTable.insert(1.0, "Table for "+str(n+2)+" discrete points, η = "+str(nu)+ ", Length of channel = "+str(length)+", Radius = "+str(h)+", ΔP = "+str(DeltaP)+'\n')
 
+        # insert table
+        labelTable.insert(2.0, GUI_table + '\n\n')  #https://www.pythontutorial.net/tkinter/tkinter-text/
+        # 2.0 is LineNumber.ColumnNumber
+
+        # set up the graph
         plt.margins(x=0,y=0)
         plt.plot(x, y_points)
         plt.title("Graph for {i} discrete points".format(i=n + 2))
@@ -40,9 +46,9 @@ def display():
     except:
         import traceback
         messagebox.showinfo("Error", "ERROR: ERROR: values provided caused an error")
-        traceback.print_exc()
+        traceback.print_exc() # shows the cause of the error
 
-
+# create and place window and window elements
 myGUI = tkinter.Tk()
 myGUI.geometry("1500x800")
 myGUI.title("Code Development for Flow Simulation")
@@ -97,4 +103,4 @@ ExitButton = tkinter.Button(myGUI, text="EXIT", height=1, width=10, background="
                             foreground='black', command=EXITmyGUI)
 ExitButton.place(x=500, y=750)
 
-myGUI.mainloop()
+myGUI.mainloop() # keeps the program running until the window is closed.
