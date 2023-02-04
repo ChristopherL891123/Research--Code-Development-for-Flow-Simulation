@@ -1,6 +1,6 @@
 # Research--Code-Development-for-Flow-Simulation
 Research material provided by Dr. Arati Pati and Dr. Kehinde Ladipo.  
-Special thanks to Dr. Arati Nanda Pati, Dr. John Starner, Dr. Charles Thangaraj, and my family for all thier help and support.
+Special thanks to Dr. Arati Nanda Pati, Dr. John Starner, Dr. Charles Thangaraj, and my family for all their help and support.
 
 Spring 2022
 
