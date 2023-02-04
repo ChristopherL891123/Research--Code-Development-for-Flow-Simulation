@@ -1,4 +1,4 @@
-# concepts learned from https://edube.org/study/pcpp1-3
+# Christopher Lama
 
 import tkinter
 from tkinter import messagebox  # used to display message boxes to the user
@@ -6,16 +6,50 @@ import matplotlib.pyplot as plt
 import LU
 import MatrixGeneration as m
 
+# concepts learned from https://edube.org/study/pcpp1-3
 
-def EXITmyGUI():  # throws a message asking to close the window
+def EXITmyGUI():
+    """
+    Description:
+        Generates a pop-up window that confirms if the user would like to exit the program. This is generated when the user clicks the blue button at
+        the bottom of the screen.
+
+    Parameters:
+        none
+
+    Returns:
+        None
+        """
+
     QuitMessage = messagebox.askyesno("Quit?", "Are you sure you want to quit the application?")  # returns Boolean value
     if QuitMessage == True:
         myGUI.destroy() #close the window
 
-def clearTextbox(): # clears the text box that contains the tables
+def clearTextbox():
+    """
+    Description:
+        Clears the textbox where the tables are printed out.
+
+    Parameters:
+        None
+
+    Returns:
+        None
+            """
     labelTable.delete(1.0, "end")
 
-def display(): # takes the inputs from the user, and solves the matrix equation. Displays a graph, and table of calculations.
+def display():
+    """
+    Description:
+        Asks for inputs from the user and solves the matrix equation using those values.
+        Displays a graph of results and table of calculations.
+
+    Parameters:
+        None
+
+    Returns:
+        None
+    """
     try:
         #get values from the textboxes
         n = int(Textbox.get("1.0", "end").strip())
@@ -49,8 +83,8 @@ def display(): # takes the inputs from the user, and solves the matrix equation.
         traceback.print_exc() # shows the cause of the error
 
 # create and place window and window elements
-myGUI = tkinter.Tk()
-myGUI.geometry("1500x800")
+myGUI = tkinter.Tk() # create Tkinter object
+myGUI.geometry("1500x800") # create window of 1500x800 pixels
 myGUI.title("Code Development for Flow Simulation")
 
 label1 = tkinter.Label(myGUI, text="The purpose of this research is to model a "
@@ -90,8 +124,6 @@ labelH = tkinter.Label(myGUI,text="Radius H: ", font=("Times", "12", "bold") )
 labelH.place(x=630,y=110)
 textboxH = tkinter.Text(myGUI, height=2, width=10)
 textboxH.place(x=710,y=110)
-
-
 
 labelTable = tkinter.Text(myGUI, height=35, width=180)
 labelTable.place(x=10, y=185)

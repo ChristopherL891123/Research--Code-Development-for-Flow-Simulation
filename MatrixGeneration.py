@@ -1,9 +1,21 @@
+# Christopher Lama
 # Special thanks to Dr. Charles Thangaraj
 
 # Matrix generation algorithm
 def GENERATE(n):
-    """Generates a NxN matrix composed of 2s in the diagonal line
-    and -1s in the lower and upper diagonal"""
+    """
+    Description:
+            Generates a NxN matrix composed of 2s in the diagonal line and -1s in the lower and upper diagonal
+
+    Parameters:
+
+        n: int
+            Size of matrix; user-given in main() function as well as in the Graphical User Interface.
+
+    Returns:
+        Matrix: list
+            The generated A matrix
+            """
 
     Matrix = []
     # set up the matrix
@@ -25,13 +37,42 @@ def GENERATE(n):
     return Matrix
 
 def MatPrint(matrix, n):
-    """Prints matrix row by row"""
+    """
+    Description:
+        Prints a matrix row by row
+
+    Parameters:
+        matrix: list
+            The generated A matrix.
+
+        n: int
+            Size of matrix; user-given in main() function as well as in the Graphical User Interface.
+
+    Returns:
+        none
+            """
+
     for i in range(n):
         print(matrix[i])
     return
 
 def MultMatrix(a, b):
-    """returns the product of two square matrices"""
+
+    """
+   Description:
+       Returns the product of two square matrices.
+
+   Parameters:
+       a: list
+           The generated A matrix.
+
+       b: int
+           Size of matrix; user-given in main() function as well as in the Graphical User Interface.
+
+   Returns:
+       c: list
+            Product of the multiplying a matrix by b matrix
+   """
     c = []
     n = len(a)
     # set up the matrix
@@ -50,13 +91,48 @@ def MultMatrix(a, b):
     return c
 
 def B_VExact_Yj_GENERATE(n, H, L, Delta_P, Nu):
-    """Generates b vector, Yj points, and Exact Velocity for each Yj point"""
+
+    """
+   Description:
+       Generates b vector, Yj points, and Exact Velocity for each Yj point
+
+   Parameters:
+
+       n: int
+           Size of matrix; user-given in main() function as well as in the Graphical User Interface.
+
+    L: int
+        Length of the channel
+
+    Delta_P: int
+        Change in pressure.
+
+    H: int
+        Radius of the channel.
+
+    Nu: int
+        Viscosity of the blood.
+
+   Returns:
+       B: list
+            B is the known right-hand side of the original matrix equation.
+
+       EV: list
+            Exact velocity vector.
+
+       Y_j_LIST: list
+            List of discrete points in the channel.
+
+   """
+
+    # calculate values using formulas
     Delta_Y = (2 * H) / (n + 1)
     V_max = (Delta_P * H ** 2) / (2 * Nu * L)
     F_j = (Delta_Y ** 2 * (2 * V_max)) / (H ** 2)
     B = [F_j for i in range(n)]
     EV = []
     Y_j_LIST = []
+
     for i in range(0, n + 2):
         Y_j = -H + i * Delta_Y
         Y_j_LIST.append(Y_j)
