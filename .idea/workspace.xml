@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="182f2b09-e702-45a5-8050-a6d5b66ef5f7" name="Changes" comment="Added thorough documentation." />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="R Script" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GUI.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LU.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MatrixGeneration.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="24wRNAkYtUsyGEnGCtRdhrlrvFw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/124ch/Desktop/Research--Code-Development-for-Flow-Simulation&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\124ch\Desktop\Research--Code-Development-for-Flow-Simulation\consider_deleting" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.test">
+    <configuration name="GUI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Research_Numerical_Simulation_of_Arterial_Blood_Flow" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="LU" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Research_Numerical_Simulation_of_Arterial_Blood_Flow" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/LU.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MatrixGeneration" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Research_Numerical_Simulation_of_Arterial_Blood_Flow" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MatrixGeneration.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Research--Code-Development-for-Flow-Simulation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Research--Code-Development-for-Flow-Simulation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.GUI" />
+      <item itemvalue="Python.LU" />
+      <item itemvalue="Python.MatrixGeneration" />
+      <item itemvalue="Python.main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.GUI" />
+        <item itemvalue="Python.MatrixGeneration" />
+        <item itemvalue="Python.LU" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="182f2b09-e702-45a5-8050-a6d5b66ef5f7" name="Changes" comment="" />
+      <created>1644539619640</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1644539619640</updated>
+      <workItem from="1649263697009" duration="889000" />
+      <workItem from="1649264675427" duration="2047000" />
+      <workItem from="1649284118531" duration="164000" />
+      <workItem from="1649288784560" duration="3371000" />
+      <workItem from="1649556084249" duration="2829000" />
+      <workItem from="1649633306030" duration="10011000" />
+      <workItem from="1649874757239" duration="23000" />
+      <workItem from="1650038992307" duration="35232000" />
+      <workItem from="1650246547625" duration="26823000" />
+      <workItem from="1650409667665" duration="2918000" />
+      <workItem from="1650475897850" duration="1112000" />
+      <workItem from="1650489307961" duration="73000" />
+      <workItem from="1650549969150" duration="964000" />
+    </task>
+    <task id="LOCAL-00035" summary="Program can now generate a 5x5 matrix, calculate, and graph velocity at each of the discrete points.">
+      <created>1646447534409</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1646447534409</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Program can now generate a 5x5 matrix, calculate, and graph velocity at each of the discrete points.">
+      <created>1646448233739</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1646448233739</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Program can now generate a 7x7 matrix, calculate, and graph velocity at each of the discrete points.">
+      <created>1646450019862</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1646450019862</updated>
+    </task>
+    <task id="LOCAL-00038" summary="made minor edits to files">
+      <created>1646450803069</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1646450803069</updated>
+    </task>
+    <task id="LOCAL-00039" summary="made minor edits to files">
+      <created>1646451089192</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1646451089192</updated>
+    </task>
+    <task id="LOCAL-00040" summary="made minor edits to files">
+      <created>1646451446636</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1646451446637</updated>
+    </task>
+    <task id="LOCAL-00041" summary="made minor edits to files">
+      <created>1646453800857</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1646453800857</updated>
+    </task>
+    <task id="LOCAL-00042" summary="made minor edits to files">
+      <created>1646454891577</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1646454891577</updated>
+    </task>
+    <task id="LOCAL-00043" summary="made minor edits to files">
+      <created>1646455761053</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1646455761053</updated>
+    </task>
+    <task id="LOCAL-00044" summary="made minor edits to files">
+      <created>1646848055307</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1646848055307</updated>
+    </task>
+    <task id="LOCAL-00045" summary="made minor edits to files">
+      <created>1646848877818</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1646848877818</updated>
+    </task>
+    <task id="LOCAL-00046" summary="made minor edits to files">
+      <created>1646849810078</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1646849810078</updated>
+    </task>
+    <task id="LOCAL-00047" summary="made minor edits to files">
+      <created>1646851411482</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1646851411482</updated>
+    </task>
+    <task id="LOCAL-00048" summary="made minor edits to files">
+      <created>1646852609102</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1646852609102</updated>
+    </task>
+    <task id="LOCAL-00049" summary="made minor edits to files">
+      <created>1646854640363</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1646854640363</updated>
+    </task>
+    <task id="LOCAL-00050" summary="made minor edits to files">
+      <created>1646888360868</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1646888360868</updated>
+    </task>
+    <task id="LOCAL-00051" summary="fixed division by zero error">
+      <created>1646888552630</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1646888552630</updated>
+    </task>
+    <task id="LOCAL-00052" summary="fixed division by zero error">
+      <created>1647110812951</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1647110812951</updated>
+    </task>
+    <task id="LOCAL-00053" summary="fixed division by zero error">
+      <created>1647452830953</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1647452830953</updated>
+    </task>
+    <task id="LOCAL-00054" summary="added exception handling in main.py">
+      <created>1647631063251</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1647631063251</updated>
+    </task>
+    <task id="LOCAL-00055" summary="functional GUI of research">
+      <created>1647644567865</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1647644567865</updated>
+    </task>
+    <task id="LOCAL-00056" summary="GUI is now capable of showing the table">
+      <created>1647751453845</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1647751453845</updated>
+    </task>
+    <task id="LOCAL-00057" summary="GUI is now capable of showing the table">
+      <created>1647751813001</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1647751813001</updated>
+    </task>
+    <task id="LOCAL-00058" summary="GUI is now capable of showing the table">
+      <created>1647808125582</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1647808125582</updated>
+    </task>
+    <task id="LOCAL-00059" summary="added matrix multiplication function">
+      <created>1647831132544</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1647831132544</updated>
+    </task>
+    <task id="LOCAL-00060" summary="cleaned up files">
+      <created>1647887334778</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1647887334778</updated>
+    </task>
+    <task id="LOCAL-00061" summary="cleaned up files">
+      <created>1647997577527</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1647997577527</updated>
+    </task>
+    <task id="LOCAL-00062" summary="cleaned up files">
+      <created>1648038521486</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1648038521486</updated>
+    </task>
+    <task id="LOCAL-00063" summary="cleaned up files">
+      <created>1648042581798</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1648042581798</updated>
+    </task>
+    <task id="LOCAL-00064" summary="added clear button for GUI.py">
+      <created>1648091494040</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1648091494040</updated>
+    </task>
+    <task id="LOCAL-00065" summary="cleaned up code in files">
+      <created>1648432362715</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1648432362715</updated>
+    </task>
+    <task id="LOCAL-00066" summary="cleaned up code in files">
+      <created>1648668020044</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1648668020044</updated>
+    </task>
+    <task id="LOCAL-00067" summary="cleaned up code in files">
+      <created>1648815509454</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1648815509454</updated>
+    </task>
+    <task id="LOCAL-00068" summary="cleaned up code in files">
+      <created>1648919588280</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1648919588280</updated>
+    </task>
+    <task id="LOCAL-00069" summary="added repeated graph functionality in main.py">
+      <created>1649265528775</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1649265528775</updated>
+    </task>
+    <task id="LOCAL-00070" summary="cleaned up code in files">
+      <created>1649560458744</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1649560458744</updated>
+    </task>
+    <task id="LOCAL-00071" summary="cleaned up code in files">
+      <created>1649642961036</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1649642961036</updated>
+    </task>
+    <task id="LOCAL-00072" summary="fixed typos">
+      <created>1650039504355</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1650039504355</updated>
+    </task>
+    <task id="LOCAL-00073" summary="fixed typos">
+      <created>1650549980417</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1650549980417</updated>
+    </task>
+    <task id="LOCAL-00074" summary="fixed typos">
+      <created>1650550923685</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1650550923685</updated>
+    </task>
+    <task id="LOCAL-00075" summary="fixed MatrixGeneration.GENERATE">
+      <created>1651027483018</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1651027483018</updated>
+    </task>
+    <task id="LOCAL-00076" summary="cleaned up code in LU.py">
+      <created>1651029392922</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1651029392922</updated>
+    </task>
+    <task id="LOCAL-00077" summary="cleaned up code in LU.py">
+      <created>1651032168024</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1651032168024</updated>
+    </task>
+    <task id="LOCAL-00078" summary="cleaned up code">
+      <created>1651113176829</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1651113176829</updated>
+    </task>
+    <task id="LOCAL-00079" summary="cleaned up code">
+      <created>1651371375858</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1651371375858</updated>
+    </task>
+    <task id="LOCAL-00080" summary="changed ReadMe.md">
+      <created>1652029945809</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1652029945809</updated>
+    </task>
+    <task id="LOCAL-00081" summary="changed ReadMe.md">
+      <created>1652196081599</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1652196081599</updated>
+    </task>
+    <task id="LOCAL-00082" summary="cleaned up code">
+      <created>1652229622194</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1652229622194</updated>
+    </task>
+    <task id="LOCAL-00083" summary="Added thorough documentation.">
+      <created>1675536386353</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1675536386353</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="made changes to LU.py" />
+    <MESSAGE value="made changes to GUI_RESEARCH.py" />
+    <MESSAGE value="added GENERATE(n) to MatrixGeneration.py" />
+    <MESSAGE value="cleaned up the project files" />
+    <MESSAGE value="made changes to MatrixGeneration.py" />
+    <MESSAGE value="fixed NoneType runtime error in main.py" />
+    <MESSAGE value="fixed length of B != length of A." />
+    <MESSAGE value="Program can now generate a 5x5 matrix, calculate, and graph velocity at each of the discrete points." />
+    <MESSAGE value="Program can now generate a 7x7 matrix, calculate, and graph velocity at each of the discrete points." />
+    <MESSAGE value="made minor edits to files" />
+    <MESSAGE value="fixed division by zero error" />
+    <MESSAGE value="added exception handling in main.py" />
+    <MESSAGE value="functional GUI of research" />
+    <MESSAGE value="GUI is now capable of showing the table" />
+    <MESSAGE value="added matrix multiplication function" />
+    <MESSAGE value="cleaned up files" />
+    <MESSAGE value="added clear button for GUI.py" />
+    <MESSAGE value="added repeated graph functionality in main.py" />
+    <MESSAGE value="cleaned up code in files" />
+    <MESSAGE value="fixed typos" />
+    <MESSAGE value="fixed MatrixGeneration.GENERATE" />
+    <MESSAGE value="cleaned up code in LU.py" />
+    <MESSAGE value="changed ReadMe.md" />
+    <MESSAGE value="cleaned up code" />
+    <MESSAGE value="Added thorough documentation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added thorough documentation." />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="(Delta_P * H ** 2) / (2 * Viscosity * L)" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
